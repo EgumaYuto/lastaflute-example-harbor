@@ -22,7 +22,6 @@
 /tomcat.*
 
 # DBFlute
-/dbflute-intro.*
 /mydbflute/intro_resources
 
 # LastaFlute
