@@ -1,0 +1,20 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER
+    ; columnName = MEMBER_NAME
+    ; targetType = COLUMN
+    ; decomment = 会員のフルネームの名称。
+苗字と名前を分けて管理することが多いが、ここでは単純は単純にでひとまとめ。
+    ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; jflute
+    }
+    ; pieceCode = 15ac9ca0
+    ; pieceDatetime = 2017-12-24T10:20:21.898
+    ; pieceOwner = jflute
+    ; previousPieceList = list:{
+        ; 2241364c
+    }
+}
