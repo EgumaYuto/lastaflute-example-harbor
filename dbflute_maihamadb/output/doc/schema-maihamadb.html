@@ -3693,41 +3693,55 @@ function Decomment() {
 				 {
 				'tableName': 'MEMBER'
 				, 'properties': [
+						 {
+						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。'
+						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
+						, 'commentVersion': 0
+						, 'authors': ['yuto']
+						, 'pieceCode': '5bc598ae'
+						, 'pieceDatatime': '2017-12-27T01:17:37.195'
+						, 'previousPieces': ['61029312']
+					}
 				]
 				, 'columns': [
 						 {
-						'columnName': 'MEMBER_NAME'
+						'columnName': 'MEMBER_ID'
 						, 'properties': [
 								 {
-								'decomment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純は単純にでひとまとめ。'
-								, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
+								'decomment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。<br>基本はMySQLが多いので問題になることはほとんどない。'
+								, 'databaseComment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。'
 								, 'commentVersion': 0
-								, 'authors': ['jflute']
-								, 'pieceCode': '15ac9ca0'
-								, 'pieceDatatime': '2017-12-24T10:20:21.898'
-								, 'previousPieces': ['2241364c']
+								, 'authors': ['tominaga']
+								, 'pieceCode': '425d2223'
+								, 'pieceDatatime': '2017-12-24T20:26:08.995'
+								, 'previousPieces': []
 							}
 						]
 					}
 						, {
-						'columnName': 'MEMBER_ID'
+						'columnName': 'MEMBER_NAME'
 						, 'properties': [
 								 {
-								'decomment': 'Test'
-								, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
+								'decomment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純は単純にでひとまとめ。<br>&lt;br&gt;によるDBコメントとのコンフリクトを直した。'
+								, 'databaseComment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。'
 								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': '31a8f29c'
-								, 'pieceDatatime': '2017-12-24T20:24:50.606'
-								, 'previousPieces': []
+								, 'authors': ['jflute']
+								, 'pieceCode': '32ca67b5'
+								, 'pieceDatatime': '2017-12-24T23:17:41.230'
+								, 'previousPieces': ['28e001f']
 							}
-								, {
-								'decomment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。<br>普段はMySQLしか使わない人が多いので、基本的には問題にならないはずです。'
-								, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
+						]
+					}
+						, {
+						'columnName': 'BIRTHDATE'
+						, 'properties': [
+								 {
+								'decomment': '必須項目ではないので、このデータがない会員もいる。<br>生年月日スーパーマン！私は生まれたら空を飛ぶ、とりゃー！'
+								, 'databaseComment': '必須項目ではないので、このデータがない会員もいる。'
 								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': '7473988d'
-								, 'pieceDatatime': '2017-12-24T20:24:43.100'
+								, 'authors': ['jflute']
+								, 'pieceCode': '1e333dc5'
+								, 'pieceDatatime': '2017-12-24T23:18:33.111'
 								, 'previousPieces': []
 							}
 						]

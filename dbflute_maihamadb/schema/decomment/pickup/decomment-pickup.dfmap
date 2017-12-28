@@ -1,0 +1,90 @@
+map:{
+    ; formatVersion = 1.0
+    ; pickupDatetime = 2017-12-27T01:56:16.959
+    ; decoMap = map:{
+        ; tableList = list:{
+            ; map:{
+                ; tableName = MEMBER
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+                        ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
+                        ; pieceCode = 5bc598ae
+                        ; pieceOwner = yuto
+                        ; pieceDatetime = 2017-12-27T01:17:37.195
+                        ; previousPieceList = list:{
+                            ; 61029312
+                        }
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; yuto
+                        }
+                    }
+                }
+                ; columnList = list:{
+                    ; map:{
+                        ; columnName = MEMBER_ID
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
+基本はMySQLが多いので問題になることはほとんどない。
+                                ; databaseComment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
+                                ; pieceCode = 425d2223
+                                ; pieceOwner = tominaga
+                                ; pieceDatetime = 2017-12-24T20:26:08.995
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = MEMBER_NAME
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 会員のフルネームの名称。
+苗字と名前を分けて管理することが多いが、ここでは単純は単純にでひとまとめ。
+&lt\;br&gt\;によるDBコメントとのコンフリクトを直した。
+                                ; databaseComment = 会員のフルネームの名称。
+苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。
+                                ; pieceCode = 32ca67b5
+                                ; pieceOwner = jflute
+                                ; pieceDatetime = 2017-12-24T23:17:41.230
+                                ; previousPieceList = list:{
+                                    ; 28e001f
+                                }
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; jflute
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = BIRTHDATE
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 必須項目ではないので、このデータがない会員もいる。
+生年月日スーパーマン！私は生まれたら空を飛ぶ、とりゃー！
+                                ; databaseComment = 必須項目ではないので、このデータがない会員もいる。
+                                ; pieceCode = 1e333dc5
+                                ; pieceOwner = jflute
+                                ; pieceDatetime = 2017-12-24T23:18:33.111
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; jflute
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
