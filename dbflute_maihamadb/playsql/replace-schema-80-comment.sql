@@ -79,7 +79,7 @@ comment on column MEMBER_WITHDRAWAL.WITHDRAWAL_DATETIME is '退会日時: 退会
 
 -- MEMBER_LOGIN
 comment on table MEMBER_LOGIN is '会員ログイン: ログインするたびに登録されるログイン履歴。
-登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。';
+登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。';
 comment on column MEMBER_LOGIN.MEMBER_LOGIN_ID is '会員ログインID: ';
 comment on column MEMBER_LOGIN.MEMBER_ID is '会員ID: ';
 comment on column MEMBER_LOGIN.LOGIN_DATETIME is 'ログイン日時: ログインした瞬間の日時。
