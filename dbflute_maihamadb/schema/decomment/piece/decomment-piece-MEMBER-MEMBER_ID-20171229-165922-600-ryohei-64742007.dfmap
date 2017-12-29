@@ -1,0 +1,20 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER
+    ; columnName = MEMBER_ID
+    ; targetType = COLUMN
+    ; decomment = 連番として自動採番される。会員のIDだけに限らず採番方法はDBMS次第。
+基本はMySQLが多いので問題になることはほとんどない。
+    ; databaseComment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+        ; ryohei
+    }
+    ; pieceCode = 64742007
+    ; pieceDatetime = 2017-12-29T16:59:22.599
+    ; pieceOwner = ryohei
+    ; previousPieceList = list:{
+        ; 425d2223
+    }
+}
