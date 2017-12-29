@@ -348,7 +348,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member_status" title="FK_MEMBER_MEMBER_STATUS">MEMBER_STATUS</a>, <a href="#member_address" class="additionalfk" title="FK_MEMBER_MEMBER_ADDRESS_VALID: fixedCondition=&quot;$$foreignAlias$$.VALID_BEGIN_DATE &lt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null\n     and $$foreignAlias$$.VALID_END_DATE &gt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null&quot;, comment=Member's address at the target date.">MEMBER_ADDRESS(AsValid)</a>, <a href="#member_login" class="additionalfk" title="FK_MEMBER_MEMBER_LOGIN_LATEST: fixedCondition=&quot;$$foreignAlias$$.LOGIN_DATETIME = ($$sqbegin$$\nselect max(login.LOGIN_DATETIME)\n  from MEMBER_LOGIN login\n where login.MEMBER_ID = $$foreignAlias$$.MEMBER_ID\n)$$sqend$$&quot;">MEMBER_LOGIN(AsLatest)</a></td>
 		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER">MEMBER_FOLLOWING</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER">MEMBER_FOLLOWING</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>, <a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>, <a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>, <a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>, <a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a></td>
-		<td class="commentcell member_comment"><pre> 会員のプロフィールやアカウントなどの基本情報を保持する。
+		<td class="commentcell member_comment"><pre>会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</pre></td>
 		<td class="subcell">Member</td>
@@ -360,7 +360,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER</a>, <a href="#region" title="FK_MEMBER_ADDRESS_REGION">REGION</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_address_comment"><pre> 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+		<td class="commentcell member_address_comment"><pre>会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
 会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
 有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) "1 : 0..1" である。</pre></td>
 		<td class="subcell">MemberAddress</td>
@@ -372,7 +372,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_FOLLOWING_MY_MEMBER">MEMBER</a>, <a href="#member" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_following_comment"><pre> とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</pre></td>
+		<td class="commentcell member_following_comment"><pre>とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</pre></td>
 		<td class="subcell">MemberFollowing</td>
 	</tr>
 	<tr>
@@ -382,7 +382,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_LOGIN_MEMBER">MEMBER</a>, <a href="#member_status" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_STATUS</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_login_comment"><pre> ログインするたびに登録されるログイン履歴。
+		<td class="commentcell member_login_comment"><pre>ログインするたびに登録されるログイン履歴。
 登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></td>
 		<td class="subcell">MemberLogin</td>
 	</tr>
@@ -393,7 +393,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_SECURITY_MEMBER">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_security_comment"><pre> 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></td>
+		<td class="commentcell member_security_comment"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></td>
 		<td class="subcell">MemberSecurity</td>
 	</tr>
 	<tr>
@@ -403,7 +403,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_SERVICE_MEMBER">MEMBER</a>, <a href="#service_rank" title="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">SERVICE_RANK</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_service_comment"><pre> 会員のサービス情報（ポイントサービスなど）。
+		<td class="commentcell member_service_comment"><pre>会員のサービス情報（ポイントサービスなど）。
 テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。</pre></td>
 		<td class="subcell">MemberService</td>
 	</tr>
@@ -414,7 +414,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_MEMBER_STATUS">MEMBER</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_LOGIN</a></td>
-		<td class="commentcell member_status_comment"><pre> 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+		<td class="commentcell member_status_comment"><pre>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
 業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
 
 こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</pre></td>
@@ -427,7 +427,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER</a>, <a href="#withdrawal_reason" title="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">WITHDRAWAL_REASON</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_withdrawal_comment"><pre> 退会会員の退会に関する詳細な情報。
+		<td class="commentcell member_withdrawal_comment"><pre>退会会員の退会に関する詳細な情報。
 退会会員のみデータが存在し、"1 : 0..1" のパターンの one-to-one である。
 共通カラムがあってバージョンNOがないパターン。
 基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。</pre></td>
@@ -440,7 +440,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#product_category" title="FK_PRODUCT_PRODUCT_CATEGORY">PRODUCT_CATEGORY</a>, <a href="#product_status" title="FK_PRODUCT_PRODUCT_STATUS">PRODUCT_STATUS</a></td>
 		<td class="relcell"><a href="#purchase" title="FK_PURCHASE_PRODUCT">PURCHASE</a></td>
-		<td class="commentcell product_comment"><pre> &nbsp;</pre></td>
+		<td class="commentcell product_comment"><pre>&nbsp;</pre></td>
 		<td class="subcell">Product</td>
 	</tr>
 	<tr>
@@ -450,7 +450,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#product_category" title="FK_PRODUCT_CATEGORY_PARENT">PRODUCT_CATEGORY</a></td>
 		<td class="relcell"><a href="#product" title="FK_PRODUCT_PRODUCT_CATEGORY">PRODUCT</a>, <a href="#product_category" title="FK_PRODUCT_CATEGORY_PARENT">PRODUCT_CATEGORY</a></td>
-		<td class="commentcell product_category_comment"><pre> 商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</pre></td>
+		<td class="commentcell product_category_comment"><pre>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</pre></td>
 		<td class="subcell">ProductCategory</td>
 	</tr>
 	<tr>
@@ -460,7 +460,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#product" title="FK_PRODUCT_PRODUCT_STATUS">PRODUCT</a></td>
-		<td class="commentcell product_status_comment"><pre> 商品のステータスを表現する固定的なマスタ。</pre></td>
+		<td class="commentcell product_status_comment"><pre>商品のステータスを表現する固定的なマスタ。</pre></td>
 		<td class="subcell">ProductStatus</td>
 	</tr>
 	<tr>
@@ -470,7 +470,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_PURCHASE_MEMBER">MEMBER</a>, <a href="#product" title="FK_PURCHASE_PRODUCT">PRODUCT</a></td>
 		<td class="relcell"><a href="#purchase_payment" title="FK_PURCHASE_PAYMENT_PURCHASE">PURCHASE_PAYMENT</a></td>
-		<td class="commentcell purchase_comment"><pre> 一つの商品に対する購入を表現する(購入履歴とも言える)。
+		<td class="commentcell purchase_comment"><pre>一つの商品に対する購入を表現する(購入履歴とも言える)。
 実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</pre></td>
 		<td class="subcell">Purchase</td>
 	</tr>
@@ -481,7 +481,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#purchase" title="FK_PURCHASE_PAYMENT_PURCHASE">PURCHASE</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell purchase_payment_comment"><pre> 購入に対する支払。
+		<td class="commentcell purchase_payment_comment"><pre>購入に対する支払。
 分割払いもできるのでmanyとなり、会員からの孫テーブルのテストができてうれしい。</pre></td>
 		<td class="subcell">PurchasePayment</td>
 	</tr>
@@ -492,7 +492,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_REGION">MEMBER_ADDRESS</a></td>
-		<td class="commentcell region_comment"><pre> 主に会員の住所に対応する漠然とした地域。
+		<td class="commentcell region_comment"><pre>主に会員の住所に対応する漠然とした地域。
 かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</pre></td>
 		<td class="subcell">Region</td>
 	</tr>
@@ -503,7 +503,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_service" title="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">MEMBER_SERVICE</a></td>
-		<td class="commentcell service_rank_comment"><pre> 会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</pre></td>
+		<td class="commentcell service_rank_comment"><pre>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</pre></td>
 		<td class="subcell">ServiceRank</td>
 	</tr>
 	<tr>
@@ -513,7 +513,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">MEMBER_WITHDRAWAL</a></td>
-		<td class="commentcell withdrawal_reason_comment"><pre> 会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</pre></td>
+		<td class="commentcell withdrawal_reason_comment"><pre>会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</pre></td>
 		<td class="subcell">WithdrawalReason</td>
 	</tr>
 	</tbody>
@@ -3143,22 +3143,22 @@ dl.procedurelist dd.column pre {
 			<tr>
 				<td>1</td>
 				<td>America</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>2</td>
 				<td>Canada</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>3</td>
 				<td>China</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>4</td>
 				<td>Chiba</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			</table>
 		</td>
@@ -3211,12 +3211,12 @@ dl.procedurelist dd.column pre {
 			<tr>
 				<td>MSC</td>
 				<td>Music</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>FOD</td>
 				<td>Food</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>HEB</td>
@@ -3250,17 +3250,17 @@ dl.procedurelist dd.column pre {
 			<tr>
 				<td>ONS</td>
 				<td>OnSaleProduction</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>PST</td>
 				<td>ProductionStop</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>SST</td>
 				<td>SaleStop</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			</table>
 		</td>
@@ -4324,7 +4324,7 @@ Decomment.prototype = {
 		var that = this;
 		Array.prototype.forEach.call(properties, function (property) {
 			if (property['databaseComment'] != null && databaseComment != null && !isDatabaseCommentConflict) {
-				isDatabaseCommentConflict = that.escapeNewlineCharacter(databaseComment) != property['databaseComment'];
+				isDatabaseCommentConflict = that.escapeNewlineCharacter(databaseComment) != that.escapeNewlineCharacter(property['databaseComment']);
 			}
 			decomments.push(property["decomment"]);
 			if (property['pieceCode'] != null) {
@@ -4380,7 +4380,7 @@ Decomment.prototype = {
 		var that = this;
 		Array.prototype.forEach.call(properties, function (property) {
 			if (property['databaseComment'] != null && databaseComment != null && !isDatabaseCommentConflict) {
-				isDatabaseCommentConflict = that.escapeNewlineCharacter(databaseComment) != property['databaseComment'];
+				isDatabaseCommentConflict = that.escapeNewlineCharacter(databaseComment) != that.escapeNewlineCharacter(property['databaseComment']);
 			}
 			decomments.push(property["decomment"]);
 			if (property['pieceCode'] != null) {
