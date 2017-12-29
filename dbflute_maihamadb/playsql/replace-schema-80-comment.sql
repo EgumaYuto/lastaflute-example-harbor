@@ -83,7 +83,7 @@ comment on table MEMBER_LOGIN is '会員ログイン: ログインするたび�
 comment on column MEMBER_LOGIN.MEMBER_LOGIN_ID is '会員ログインID: ';
 comment on column MEMBER_LOGIN.MEMBER_ID is '会員ID: ';
 comment on column MEMBER_LOGIN.LOGIN_DATETIME is 'ログイン日時: ログインした瞬間の日時。
-同じ会員が同じ日時にログインはできない。(ユニーク制約で重複ログインできないようにしてある)';
+同じ会員が同じ日時にログインはできない。はっはっは、DBコメント自体にHTMLタグ <br> 入れてやる by jflute。(ユニーク制約で重複ログインできないようにしてある)';
 comment on column MEMBER_LOGIN.MOBILE_LOGIN_FLG is 'モバイルログインフラグ: モバイル機器からのログインか否か。';
 comment on column MEMBER_LOGIN.LOGIN_MEMBER_STATUS_CODE is 'ログイン時会員ステータスコード: ログイン時の会員ステータス';
 
