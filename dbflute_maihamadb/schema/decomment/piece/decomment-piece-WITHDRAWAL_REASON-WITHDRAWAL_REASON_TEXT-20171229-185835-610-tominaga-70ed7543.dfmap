@@ -1,0 +1,19 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = WITHDRAWAL_REASON
+    ; columnName = WITHDRAWAL_REASON_TEXT
+    ; targetType = COLUMN
+    ; decomment = 退会理由の内容。
+テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。
+それをきれいに見せるのがデザイナーの腕の見せ所ですね。。。。。。
+    ; databaseComment = 退会理由の内容。
+テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+    }
+    ; pieceCode = 70ed7543
+    ; pieceDatetime = 2017-12-29T18:58:35.610
+    ; pieceOwner = tominaga
+    ; previousPieceList = list:{}
+}

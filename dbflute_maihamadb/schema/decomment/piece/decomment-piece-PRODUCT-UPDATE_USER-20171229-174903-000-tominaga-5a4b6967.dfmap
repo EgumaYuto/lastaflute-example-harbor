@@ -1,0 +1,16 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = PRODUCT
+    ; columnName = UPDATE_USER
+    ; targetType = COLUMN
+    ; decomment = 更新したユーザー
+    ; databaseComment = 
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+    }
+    ; pieceCode = 5a4b6967
+    ; pieceDatetime = 2017-12-29T17:49:02.999
+    ; pieceOwner = tominaga
+    ; previousPieceList = list:{}
+}
