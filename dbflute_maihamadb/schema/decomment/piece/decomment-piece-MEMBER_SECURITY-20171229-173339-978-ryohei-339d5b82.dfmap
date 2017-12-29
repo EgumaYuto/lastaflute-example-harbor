@@ -1,0 +1,19 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER_SECURITY
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。
+    ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;で、会員一人につき必ず一つのセキュリティ情報がある
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+        ; ryohei
+    }
+    ; pieceCode = 339d5b82
+    ; pieceDatetime = 2017-12-29T17:33:39.977
+    ; pieceOwner = ryohei
+    ; previousPieceList = list:{
+        ; 36b237b9
+    }
+}
