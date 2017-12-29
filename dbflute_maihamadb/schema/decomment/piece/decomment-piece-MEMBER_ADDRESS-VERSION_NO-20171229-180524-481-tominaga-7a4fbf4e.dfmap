@@ -1,0 +1,17 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER_ADDRESS
+    ; columnName = VERSION_NO
+    ; targetType = COLUMN
+    ; decomment = バージョンNo
+同時更新をされないようにします。
+    ; databaseComment = 
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+    }
+    ; pieceCode = 7a4fbf4e
+    ; pieceDatetime = 2017-12-29T18:05:24.481
+    ; pieceOwner = tominaga
+    ; previousPieceList = list:{}
+}
