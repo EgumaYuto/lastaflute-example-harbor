@@ -3694,13 +3694,13 @@ function Decomment() {
 				'tableName': 'MEMBER'
 				, 'properties': [
 						 {
-						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。'
+						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br><br>test'
 						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
 						, 'commentVersion': 0
-						, 'authors': ['yuto']
-						, 'pieceCode': '5bc598ae'
-						, 'pieceDatatime': '2017-12-27T01:17:37.195'
-						, 'previousPieces': ['61029312']
+						, 'authors': ['yuto','tominaga']
+						, 'pieceCode': '32e1bfd8'
+						, 'pieceDatatime': '2017-12-29T15:44:36.269'
+						, 'previousPieces': ['5bc598ae']
 					}
 				]
 				, 'columns': [
@@ -3746,6 +3746,22 @@ function Decomment() {
 							}
 						]
 					}
+				]
+			}
+				, {
+				'tableName': 'MEMBER_SECURITY'
+				, 'properties': [
+						 {
+						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある<br>dfsafa'
+						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': '36b237b9'
+						, 'pieceDatatime': '2017-12-29T15:44:41.632'
+						, 'previousPieces': []
+					}
+				]
+				, 'columns': [
 				]
 			}
 		]}

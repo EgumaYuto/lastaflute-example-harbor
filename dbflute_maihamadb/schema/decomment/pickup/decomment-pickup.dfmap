@@ -1,6 +1,6 @@
 map:{
     ; formatVersion = 1.0
-    ; pickupDatetime = 2017-12-27T01:56:16.959
+    ; pickupDatetime = 2017-12-29T16:21:55.879
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
@@ -9,18 +9,22 @@ map:{
                     ; map:{
                         ; decomment = 会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
+
+
+test
                         ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
-                        ; pieceCode = 5bc598ae
-                        ; pieceOwner = yuto
-                        ; pieceDatetime = 2017-12-27T01:17:37.195
+                        ; pieceCode = 32e1bfd8
+                        ; pieceOwner = tominaga
+                        ; pieceDatetime = 2017-12-29T15:44:36.269
                         ; previousPieceList = list:{
-                            ; 61029312
+                            ; 5bc598ae
                         }
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; yuto
+                            ; tominaga
                         }
                     }
                 }
@@ -84,6 +88,25 @@ map:{
                         }
                     }
                 }
+            }
+            ; map:{
+                ; tableName = MEMBER_SECURITY
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある
+dfsafa
+                        ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;で、会員一人につき必ず一つのセキュリティ情報がある
+                        ; pieceCode = 36b237b9
+                        ; pieceOwner = tominaga
+                        ; pieceDatetime = 2017-12-29T15:44:41.632
+                        ; previousPieceList = list:{}
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                        }
+                    }
+                }
+                ; columnList = list:{}
             }
         }
     }
