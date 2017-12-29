@@ -1,0 +1,18 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = PRODUCT
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 商品のテーブル。定価とか品番とかを持つ。
+    ; databaseComment = 
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; ryohei
+    }
+    ; pieceCode = 1f4da0e6
+    ; pieceDatetime = 2017-12-29T17:36:40.952
+    ; pieceOwner = ryohei
+    ; previousPieceList = list:{
+        ; 2fd2443e
+    }
+}
