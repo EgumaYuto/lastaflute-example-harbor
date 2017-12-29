@@ -1,0 +1,93 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = PRODUCT
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 商品のテーブル。定価とか品番とかを持つ。
+
+SQLとかかいてみたりするコメントとかありそう
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+    ; databaseComment = 
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; ryohei
+    }
+    ; pieceCode = 4ce059a0
+    ; pieceDatetime = 2017-12-29T17:40:00.114
+    ; pieceOwner = ryohei
+    ; previousPieceList = list:{
+        ; 50dd5857
+    }
+}

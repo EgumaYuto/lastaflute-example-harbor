@@ -1,0 +1,49 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = PRODUCT
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 商品のテーブル。定価とか品番とかを持つ。
+
+SQLとかかいてみたりするコメントとかありそう
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+
+
+2017/12/29 ＼(^o^)／
+2016/12/29 カラム追加
+2015/12/29 作成
+    ; databaseComment = 
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; ryohei
+    }
+    ; pieceCode = 30b1dfc0
+    ; pieceDatetime = 2017-12-29T17:41:14.540
+    ; pieceOwner = ryohei
+    ; previousPieceList = list:{
+        ; 7f6b8d1
+    }
+}

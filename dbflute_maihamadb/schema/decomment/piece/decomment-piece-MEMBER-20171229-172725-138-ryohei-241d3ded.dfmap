@@ -9,7 +9,11 @@ map:{
 
 test
 
-cabosは新幹線。新幹線はcabos。
+もうコンフリクトはしないはず
+
+やったぜ！
+
+なんか問題はなさそうなかんじだ。
     ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
@@ -18,11 +22,12 @@ cabosは新幹線。新幹線はcabos。
         ; yuto
         ; tominaga
         ; jflute
+        ; ryohei
     }
-    ; pieceCode = 4feb3827
-    ; pieceDatetime = 2017-12-29T16:47:39.358
-    ; pieceOwner = jflute
+    ; pieceCode = 241d3ded
+    ; pieceDatetime = 2017-12-29T17:27:25.137
+    ; pieceOwner = ryohei
     ; previousPieceList = list:{
-        ; 32e1bfd8
+        ; 5bc746b6
     }
 }

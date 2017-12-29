@@ -1,0 +1,16 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = PRODUCT
+    ; columnName = REGISTER_DATETIME
+    ; targetType = COLUMN
+    ; decomment = 商品の登録日時ですよ。
+    ; databaseComment = 
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; ryohei
+    }
+    ; pieceCode = 5712f64b
+    ; pieceDatetime = 2017-12-29T17:31:53.175
+    ; pieceOwner = ryohei
+    ; previousPieceList = list:{}
+}

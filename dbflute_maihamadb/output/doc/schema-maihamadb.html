@@ -282,12 +282,14 @@ dl.procedurelist dd.column pre {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 .decommentmodalcontent {
+	position: relative;
 	z-index: 10;
 	width: 50%;
 	margin: 0 auto;
 	border: 1px solid #999999;
 	padding: 15px;
 	background-color: #ffffff;
+	border-radius: 4px;
 }
 .decommentmodalcontent p {
 	font-size: 14px;
@@ -298,9 +300,30 @@ dl.procedurelist dd.column pre {
 	margin-top: 10px;
 	font-size: 12px;
 }
-.decommentmodalbtn {
+.decommentmodal-ok-btn {
 	margin: 10px 5px 0 0;
 	padding: 5px 10px;
+	border-radius: 4px;
+}
+.decommentmodal-close-btn {
+	position: absolute;
+	margin-left: 10px;
+	padding: 0;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+	width: 28px;
+	height: 28px;
+	border: 0;
+	border-radius: 50%;
+	color: #657786;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+	transition: box-shadow .15s ease-in-out;
+}
+.decommentmodal-close-btn:hover {
+	background-color: #eed;
 }
 	</style>
 </head>
@@ -348,7 +371,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member_status" title="FK_MEMBER_MEMBER_STATUS">MEMBER_STATUS</a>, <a href="#member_address" class="additionalfk" title="FK_MEMBER_MEMBER_ADDRESS_VALID: fixedCondition=&quot;$$foreignAlias$$.VALID_BEGIN_DATE &lt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null\n     and $$foreignAlias$$.VALID_END_DATE &gt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null&quot;, comment=Member's address at the target date.">MEMBER_ADDRESS(AsValid)</a>, <a href="#member_login" class="additionalfk" title="FK_MEMBER_MEMBER_LOGIN_LATEST: fixedCondition=&quot;$$foreignAlias$$.LOGIN_DATETIME = ($$sqbegin$$\nselect max(login.LOGIN_DATETIME)\n  from MEMBER_LOGIN login\n where login.MEMBER_ID = $$foreignAlias$$.MEMBER_ID\n)$$sqend$$&quot;">MEMBER_LOGIN(AsLatest)</a></td>
 		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER">MEMBER_FOLLOWING</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER">MEMBER_FOLLOWING</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>, <a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>, <a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>, <a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>, <a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a></td>
-		<td class="commentcell member_comment"><pre>会員のプロフィールやアカウントなどの基本情報を保持する。
+		<td class="commentcell MEMBER_comment"><pre>会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</pre></td>
 		<td class="subcell">Member</td>
@@ -360,7 +383,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER</a>, <a href="#region" title="FK_MEMBER_ADDRESS_REGION">REGION</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_address_comment"><pre>会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+		<td class="commentcell MEMBER_ADDRESS_comment"><pre>会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
 会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
 有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) "1 : 0..1" である。</pre></td>
 		<td class="subcell">MemberAddress</td>
@@ -372,7 +395,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_FOLLOWING_MY_MEMBER">MEMBER</a>, <a href="#member" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_following_comment"><pre>とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</pre></td>
+		<td class="commentcell MEMBER_FOLLOWING_comment"><pre>とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</pre></td>
 		<td class="subcell">MemberFollowing</td>
 	</tr>
 	<tr>
@@ -382,7 +405,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_LOGIN_MEMBER">MEMBER</a>, <a href="#member_status" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_STATUS</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_login_comment"><pre>ログインするたびに登録されるログイン履歴。
+		<td class="commentcell MEMBER_LOGIN_comment"><pre>ログインするたびに登録されるログイン履歴。
 登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></td>
 		<td class="subcell">MemberLogin</td>
 	</tr>
@@ -393,7 +416,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_SECURITY_MEMBER">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_security_comment"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></td>
+		<td class="commentcell MEMBER_SECURITY_comment"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></td>
 		<td class="subcell">MemberSecurity</td>
 	</tr>
 	<tr>
@@ -403,7 +426,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_SERVICE_MEMBER">MEMBER</a>, <a href="#service_rank" title="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">SERVICE_RANK</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_service_comment"><pre>会員のサービス情報（ポイントサービスなど）。
+		<td class="commentcell MEMBER_SERVICE_comment"><pre>会員のサービス情報（ポイントサービスなど）。
 テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。</pre></td>
 		<td class="subcell">MemberService</td>
 	</tr>
@@ -414,7 +437,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_MEMBER_STATUS">MEMBER</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_LOGIN</a></td>
-		<td class="commentcell member_status_comment"><pre>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+		<td class="commentcell MEMBER_STATUS_comment"><pre>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
 業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
 
 こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</pre></td>
@@ -427,7 +450,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER</a>, <a href="#withdrawal_reason" title="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">WITHDRAWAL_REASON</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell member_withdrawal_comment"><pre>退会会員の退会に関する詳細な情報。
+		<td class="commentcell MEMBER_WITHDRAWAL_comment"><pre>退会会員の退会に関する詳細な情報。
 退会会員のみデータが存在し、"1 : 0..1" のパターンの one-to-one である。
 共通カラムがあってバージョンNOがないパターン。
 基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。</pre></td>
@@ -440,7 +463,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#product_category" title="FK_PRODUCT_PRODUCT_CATEGORY">PRODUCT_CATEGORY</a>, <a href="#product_status" title="FK_PRODUCT_PRODUCT_STATUS">PRODUCT_STATUS</a></td>
 		<td class="relcell"><a href="#purchase" title="FK_PURCHASE_PRODUCT">PURCHASE</a></td>
-		<td class="commentcell product_comment"><pre>&nbsp;</pre></td>
+		<td class="commentcell PRODUCT_comment"><pre>&nbsp;</pre></td>
 		<td class="subcell">Product</td>
 	</tr>
 	<tr>
@@ -450,7 +473,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#product_category" title="FK_PRODUCT_CATEGORY_PARENT">PRODUCT_CATEGORY</a></td>
 		<td class="relcell"><a href="#product" title="FK_PRODUCT_PRODUCT_CATEGORY">PRODUCT</a>, <a href="#product_category" title="FK_PRODUCT_CATEGORY_PARENT">PRODUCT_CATEGORY</a></td>
-		<td class="commentcell product_category_comment"><pre>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</pre></td>
+		<td class="commentcell PRODUCT_CATEGORY_comment"><pre>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</pre></td>
 		<td class="subcell">ProductCategory</td>
 	</tr>
 	<tr>
@@ -460,7 +483,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#product" title="FK_PRODUCT_PRODUCT_STATUS">PRODUCT</a></td>
-		<td class="commentcell product_status_comment"><pre>商品のステータスを表現する固定的なマスタ。</pre></td>
+		<td class="commentcell PRODUCT_STATUS_comment"><pre>商品のステータスを表現する固定的なマスタ。</pre></td>
 		<td class="subcell">ProductStatus</td>
 	</tr>
 	<tr>
@@ -470,7 +493,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_PURCHASE_MEMBER">MEMBER</a>, <a href="#product" title="FK_PURCHASE_PRODUCT">PRODUCT</a></td>
 		<td class="relcell"><a href="#purchase_payment" title="FK_PURCHASE_PAYMENT_PURCHASE">PURCHASE_PAYMENT</a></td>
-		<td class="commentcell purchase_comment"><pre>一つの商品に対する購入を表現する(購入履歴とも言える)。
+		<td class="commentcell PURCHASE_comment"><pre>一つの商品に対する購入を表現する(購入履歴とも言える)。
 実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</pre></td>
 		<td class="subcell">Purchase</td>
 	</tr>
@@ -481,7 +504,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#purchase" title="FK_PURCHASE_PAYMENT_PURCHASE">PURCHASE</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell purchase_payment_comment"><pre>購入に対する支払。
+		<td class="commentcell PURCHASE_PAYMENT_comment"><pre>購入に対する支払。
 分割払いもできるのでmanyとなり、会員からの孫テーブルのテストができてうれしい。</pre></td>
 		<td class="subcell">PurchasePayment</td>
 	</tr>
@@ -492,7 +515,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_REGION">MEMBER_ADDRESS</a></td>
-		<td class="commentcell region_comment"><pre>主に会員の住所に対応する漠然とした地域。
+		<td class="commentcell REGION_comment"><pre>主に会員の住所に対応する漠然とした地域。
 かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</pre></td>
 		<td class="subcell">Region</td>
 	</tr>
@@ -503,7 +526,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_service" title="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">MEMBER_SERVICE</a></td>
-		<td class="commentcell service_rank_comment"><pre>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</pre></td>
+		<td class="commentcell SERVICE_RANK_comment"><pre>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</pre></td>
 		<td class="subcell">ServiceRank</td>
 	</tr>
 	<tr>
@@ -513,7 +536,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">MEMBER_WITHDRAWAL</a></td>
-		<td class="commentcell withdrawal_reason_comment"><pre>会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</pre></td>
+		<td class="commentcell WITHDRAWAL_REASON_comment"><pre>会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</pre></td>
 		<td class="subcell">WithdrawalReason</td>
 	</tr>
 	</tbody>
@@ -522,7 +545,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=11">
 (会員)MEMBER
 </h2>
-<div class="tablecomment member_comment" data-name="member"><pre>会員のプロフィールやアカウントなどの基本情報を保持する。
+<div class="tablecomment MEMBER_comment" data-name="MEMBER"><pre>会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</pre></div>
 <input type="hidden" value="MEMBER">
@@ -760,7 +783,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_address" title="type=TABLE, primaryKey={MEMBER_ADDRESS_ID}, nameLength=14, columnCount=11">
 (会員住所情報)MEMBER_ADDRESS
 </h2>
-<div class="tablecomment member_address_comment" data-name="member_address"><pre>会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+<div class="tablecomment MEMBER_ADDRESS_comment" data-name="MEMBER_ADDRESS"><pre>会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
 会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
 有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) "1 : 0..1" である。</pre></div>
 <input type="hidden" value="MEMBER_ADDRESS">
@@ -992,7 +1015,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_following" title="type=TABLE, primaryKey={MEMBER_FOLLOWING_ID}, nameLength=16, columnCount=4">
 (会員フォローイング)MEMBER_FOLLOWING
 </h2>
-<div class="tablecomment member_following_comment" data-name="member_following"><pre>とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</pre></div>
+<div class="tablecomment MEMBER_FOLLOWING_comment" data-name="MEMBER_FOLLOWING"><pre>とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</pre></div>
 <input type="hidden" value="MEMBER_FOLLOWING">
 <table class="tablecontent">
 	<thead>
@@ -1092,7 +1115,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_login" title="type=TABLE, primaryKey={MEMBER_LOGIN_ID}, nameLength=12, columnCount=5">
 (会員ログイン)MEMBER_LOGIN
 </h2>
-<div class="tablecomment member_login_comment" data-name="member_login"><pre>ログインするたびに登録されるログイン履歴。
+<div class="tablecomment MEMBER_LOGIN_comment" data-name="MEMBER_LOGIN"><pre>ログインするたびに登録されるログイン履歴。
 登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></div>
 <input type="hidden" value="MEMBER_LOGIN">
 <table class="tablecontent">
@@ -1212,7 +1235,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=15, columnCount=10">
 (会員セキュリティ情報)MEMBER_SECURITY
 </h2>
-<div class="tablecomment member_security_comment" data-name="member_security"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></div>
+<div class="tablecomment MEMBER_SECURITY_comment" data-name="MEMBER_SECURITY"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></div>
 <input type="hidden" value="MEMBER_SECURITY">
 <table class="tablecontent">
 	<thead>
@@ -1422,7 +1445,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_service" title="type=TABLE, primaryKey={MEMBER_SERVICE_ID}, nameLength=14, columnCount=9">
 (会員サービス)MEMBER_SERVICE
 </h2>
-<div class="tablecomment member_service_comment" data-name="member_service"><pre>会員のサービス情報（ポイントサービスなど）。
+<div class="tablecomment MEMBER_SERVICE_comment" data-name="MEMBER_SERVICE"><pre>会員のサービス情報（ポイントサービスなど）。
 テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。</pre></div>
 <input type="hidden" value="MEMBER_SERVICE">
 <table class="tablecontent">
@@ -1613,7 +1636,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_status" title="type=TABLE, primaryKey={MEMBER_STATUS_CODE}, nameLength=13, columnCount=4">
 (会員ステータス)MEMBER_STATUS
 </h2>
-<div class="tablecomment member_status_comment" data-name="member_status"><pre>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+<div class="tablecomment MEMBER_STATUS_comment" data-name="MEMBER_STATUS"><pre>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
 業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
 
 こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</pre></div>
@@ -1720,7 +1743,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_withdrawal" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=17, columnCount=8">
 (会員退会情報)MEMBER_WITHDRAWAL
 </h2>
-<div class="tablecomment member_withdrawal_comment" data-name="member_withdrawal"><pre>退会会員の退会に関する詳細な情報。
+<div class="tablecomment MEMBER_WITHDRAWAL_comment" data-name="MEMBER_WITHDRAWAL"><pre>退会会員の退会に関する詳細な情報。
 退会会員のみデータが存在し、"1 : 0..1" のパターンの one-to-one である。
 共通カラムがあってバージョンNOがないパターン。
 基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。</pre></div>
@@ -1898,7 +1921,7 @@ dl.procedurelist dd.column pre {
 <h2 id="product" title="type=TABLE, primaryKey={PRODUCT_ID}, nameLength=7, columnCount=11">
 (商品)PRODUCT
 </h2>
-<div class="tablecomment product_comment" data-name="product"><pre></pre></div>
+<div class="tablecomment PRODUCT_comment" data-name="PRODUCT"><pre></pre></div>
 <input type="hidden" value="PRODUCT">
 <table class="tablecontent">
 	<thead>
@@ -2125,7 +2148,7 @@ dl.procedurelist dd.column pre {
 <h2 id="product_category" title="type=TABLE, primaryKey={PRODUCT_CATEGORY_CODE}, nameLength=16, columnCount=3">
 (商品カテゴリ)PRODUCT_CATEGORY
 </h2>
-<div class="tablecomment product_category_comment" data-name="product_category"><pre>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</pre></div>
+<div class="tablecomment PRODUCT_CATEGORY_comment" data-name="PRODUCT_CATEGORY"><pre>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</pre></div>
 <input type="hidden" value="PRODUCT_CATEGORY">
 <table class="tablecontent">
 	<thead>
@@ -2207,7 +2230,7 @@ dl.procedurelist dd.column pre {
 <h2 id="product_status" title="type=TABLE, primaryKey={PRODUCT_STATUS_CODE}, nameLength=14, columnCount=3">
 (商品ステータス)PRODUCT_STATUS
 </h2>
-<div class="tablecomment product_status_comment" data-name="product_status"><pre>商品のステータスを表現する固定的なマスタ。</pre></div>
+<div class="tablecomment PRODUCT_STATUS_comment" data-name="PRODUCT_STATUS"><pre>商品のステータスを表現する固定的なマスタ。</pre></div>
 <input type="hidden" value="PRODUCT_STATUS">
 <table class="tablecontent">
 	<thead>
@@ -2289,7 +2312,7 @@ dl.procedurelist dd.column pre {
 <h2 id="purchase" title="type=TABLE, primaryKey={PURCHASE_ID}, nameLength=8, columnCount=12">
 (購入)PURCHASE
 </h2>
-<div class="tablecomment purchase_comment" data-name="purchase"><pre>一つの商品に対する購入を表現する(購入履歴とも言える)。
+<div class="tablecomment PURCHASE_comment" data-name="PURCHASE"><pre>一つの商品に対する購入を表現する(購入履歴とも言える)。
 実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</pre></div>
 <input type="hidden" value="PURCHASE">
 <table class="tablecontent">
@@ -2536,7 +2559,7 @@ dl.procedurelist dd.column pre {
 <h2 id="purchase_payment" title="type=TABLE, primaryKey={PURCHASE_PAYMENT_ID}, nameLength=16, columnCount=9">
 (購入支払)PURCHASE_PAYMENT
 </h2>
-<div class="tablecomment purchase_payment_comment" data-name="purchase_payment"><pre>購入に対する支払。
+<div class="tablecomment PURCHASE_PAYMENT_comment" data-name="PURCHASE_PAYMENT"><pre>購入に対する支払。
 分割払いもできるのでmanyとなり、会員からの孫テーブルのテストができてうれしい。</pre></div>
 <input type="hidden" value="PURCHASE_PAYMENT">
 <table class="tablecontent">
@@ -2727,7 +2750,7 @@ dl.procedurelist dd.column pre {
 <h2 id="region" title="type=TABLE, primaryKey={REGION_ID}, nameLength=6, columnCount=2">
 (地域)REGION
 </h2>
-<div class="tablecomment region_comment" data-name="region"><pre>主に会員の住所に対応する漠然とした地域。
+<div class="tablecomment REGION_comment" data-name="REGION"><pre>主に会員の住所に対応する漠然とした地域。
 かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</pre></div>
 <input type="hidden" value="REGION">
 <table class="tablecontent">
@@ -2793,7 +2816,7 @@ dl.procedurelist dd.column pre {
 <h2 id="service_rank" title="type=TABLE, primaryKey={SERVICE_RANK_CODE}, nameLength=12, columnCount=6">
 (サービスランク)SERVICE_RANK
 </h2>
-<div class="tablecomment service_rank_comment" data-name="service_rank"><pre>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</pre></div>
+<div class="tablecomment SERVICE_RANK_comment" data-name="SERVICE_RANK"><pre>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</pre></div>
 <input type="hidden" value="SERVICE_RANK">
 <table class="tablecontent">
 	<thead>
@@ -2931,7 +2954,7 @@ dl.procedurelist dd.column pre {
 <h2 id="withdrawal_reason" title="type=TABLE, primaryKey={WITHDRAWAL_REASON_CODE}, nameLength=17, columnCount=3">
 (退会理由)WITHDRAWAL_REASON
 </h2>
-<div class="tablecomment withdrawal_reason_comment" data-name="withdrawal_reason"><pre>会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</pre></div>
+<div class="tablecomment WITHDRAWAL_REASON_comment" data-name="WITHDRAWAL_REASON"><pre>会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</pre></div>
 <input type="hidden" value="WITHDRAWAL_REASON">
 <table class="tablecontent">
 	<thead>
@@ -3325,10 +3348,10 @@ dl.procedurelist dd.column pre {
 <!-- Only used by dbflute intro http://dbflute.seasar.org/ja/manual/function/helper/intro/index.html -->
 <div id="decomment-modal" class="decommentmodal">
 	<div class="decommentmodalcontent">
+		<button id="decomment-close" class="decommentmodal-close-btn"><span>x</span></button>
 		<p>Input the new column comment of <span id="decomment-modal-column-info"></span></p>
-		<textarea id="decomment-input" class="decommentinput" rows="5" tabindex="1"></textarea>
-		<button id="decomment-cancel" class="decommentmodalbtn" tabindex="3">Cancel</button>
-		<button id="decomment-ok" class="decommentmodalbtn" tabindex="2">OK</button>
+		<textarea id="decomment-input" class="decommentinput" rows="5"></textarea>
+		<button id="decomment-ok" class="decommentmodal-ok-btn">OK</button>
 	</div>
 </div>
 <script>
@@ -3694,13 +3717,13 @@ function Decomment() {
 				'tableName': 'MEMBER'
 				, 'properties': [
 						 {
-						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br><br>test'
+						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br><br>test<br><br>もうコンフリクトはしないはず<br><br>やったぜ！<br><br>なんか問題はなさそうなかんじだ。<br><br>修正<br><br>さらに追加<br><br>さらに追加'
 						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
 						, 'commentVersion': 0
-						, 'authors': ['yuto','tominaga']
-						, 'pieceCode': '32e1bfd8'
-						, 'pieceDatatime': '2017-12-29T15:44:36.269'
-						, 'previousPieces': ['5bc598ae']
+						, 'authors': ['yuto','tominaga','jflute','ryohei']
+						, 'pieceCode': '5bc746b6'
+						, 'pieceDatatime': '2017-12-29T17:20:43.674'
+						, 'previousPieces': ['2994f2e1']
 					}
 				]
 				, 'columns': [
@@ -3708,13 +3731,13 @@ function Decomment() {
 						'columnName': 'MEMBER_ID'
 						, 'properties': [
 								 {
-								'decomment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。<br>基本はMySQLが多いので問題になることはほとんどない。'
+								'decomment': '連番として自動採番される。会員のIDだけに限らず採番方法はDBMS次第。<br>基本はMySQLが多いので問題になることはほとんどない。'
 								, 'databaseComment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。'
 								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': '425d2223'
-								, 'pieceDatatime': '2017-12-24T20:26:08.995'
-								, 'previousPieces': []
+								, 'authors': ['tominaga','ryohei']
+								, 'pieceCode': '64742007'
+								, 'pieceDatatime': '2017-12-29T16:59:22.599'
+								, 'previousPieces': ['425d2223']
 							}
 						]
 					}
@@ -3758,6 +3781,152 @@ function Decomment() {
 						, 'authors': ['tominaga']
 						, 'pieceCode': '36b237b9'
 						, 'pieceDatatime': '2017-12-29T15:44:41.632'
+						, 'previousPieces': []
+					}
+				]
+				, 'columns': [
+				]
+			}
+				, {
+				'tableName': 'MEMBER_ADDRESS'
+				, 'properties': [
+						 {
+						'decomment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot;1 : 0..1&quot; である。<br>かぼすはかぼさない。いやかぼす。'
+						, 'databaseComment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には&nbsp;one-to-many&nbsp;だが、業務的な定型条件で&nbsp;one-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0..1"&nbsp;である。'
+						, 'commentVersion': 0
+						, 'authors': ['jflute']
+						, 'pieceCode': '15c2679c'
+						, 'pieceDatatime': '2017-12-29T16:57:13.425'
+						, 'previousPieces': []
+					}
+				]
+				, 'columns': [
+						 {
+						'columnName': 'REGISTER_DATETIME'
+						, 'properties': [
+								 {
+								'decomment': '登録日時'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['ryohei']
+								, 'pieceCode': '72557ed2'
+								, 'pieceDatatime': '2017-12-29T17:00:08.456'
+								, 'previousPieces': []
+							}
+						]
+					}
+				]
+			}
+				, {
+				'tableName': 'PRODUCT'
+				, 'properties': [
+				]
+				, 'columns': [
+						 {
+						'columnName': 'PRODUCT_STATUS_CODE'
+						, 'properties': [
+								 {
+								'decomment': '商品のステータスを示すよ！'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['ryohei']
+								, 'pieceCode': '4fc34ac2'
+								, 'pieceDatatime': '2017-12-29T16:56:21.571'
+								, 'previousPieces': []
+							}
+						]
+					}
+						, {
+						'columnName': 'REGULAR_PRICE'
+						, 'properties': [
+								 {
+								'decomment': '商品の定価を示すよ！税抜を想定している。'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['ryohei']
+								, 'pieceCode': '319b3bf5'
+								, 'pieceDatatime': '2017-12-29T16:57:03.564'
+								, 'previousPieces': ['615f5c2d']
+							}
+						]
+					}
+						, {
+						'columnName': 'PRODUCT_CATEGORY_CODE'
+						, 'properties': [
+								 {
+								'decomment': '商品のカテゴリーを示すコードを入れるカラム'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['ryohei']
+								, 'pieceCode': '31d6aa5f'
+								, 'pieceDatatime': '2017-12-29T16:57:24.775'
+								, 'previousPieces': []
+							}
+						]
+					}
+				]
+			}
+				, {
+				'tableName': 'MEMBER_LOGIN'
+				, 'properties': [
+						 {
+						'decomment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。<br>★ちょっとこのテーブル、デコメントした上でデータベースコメントも修正しちゃって、コンフリクトさせよう。'
+						, 'databaseComment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。'
+						, 'commentVersion': 0
+						, 'authors': ['jflute']
+						, 'pieceCode': '260b4936'
+						, 'pieceDatatime': '2017-12-29T17:00:14.044'
+						, 'previousPieces': []
+					}
+				]
+				, 'columns': [
+				]
+			}
+				, {
+				'tableName': 'WITHDRAWAL_REASON'
+				, 'properties': [
+				]
+				, 'columns': [
+						 {
+						'columnName': 'DISPLAY_ORDER'
+						, 'properties': [
+								 {
+								'decomment': '表示順。一覧表示のときとかに使うと思う。'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['ryohei']
+								, 'pieceCode': '6f5be9be'
+								, 'pieceDatatime': '2017-12-29T16:58:17.872'
+								, 'previousPieces': []
+							}
+						]
+					}
+						, {
+						'columnName': 'WITHDRAWAL_REASON_CODE'
+						, 'properties': [
+								 {
+								'decomment': '隊愛理由コード！3文字で示すのだ。'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['ryohei']
+								, 'pieceCode': '34592a23'
+								, 'pieceDatatime': '2017-12-29T16:57:49.702'
+								, 'previousPieces': []
+							}
+						]
+					}
+				]
+			}
+				, {
+				'tableName': 'MEMBER_FOLLOWING'
+				, 'properties': [
+						 {
+						'decomment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。'
+						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
+						, 'commentVersion': 0
+						, 'authors': ['jflute']
+						, 'pieceCode': '1cde89d9'
+						, 'pieceDatatime': '2017-12-29T16:57:34.667'
 						, 'previousPieces': []
 					}
 				]
@@ -4278,7 +4447,6 @@ Decomment.prototype = {
 	 */
 	extractTableElements: function (table) {
 		var className = (table["tableName"] + "_" + "comment");
-		className = className.toLowerCase();
 		var tableElements = document.getElementsByClassName(className);
 		return tableElements;
 	},
@@ -4464,7 +4632,7 @@ Decomment.prototype = {
 	buildDisplayCommentFromServer: function(commentMap) {
 		var result = "";
 		if (commentMap['isDatabaseCommentConflict']) {
-			result = this.escapeInputText(commentMap['databaseComment']) + '\n(from database comment)\n\n======\n\n';
+			result = this.escapeInputText(commentMap['databaseComment']) + '\n(from database comment)\n\n=======\n\n';
 		}
 		result += commentMap['decomments'].join('\n\n=======\n\n');
 		return result;
@@ -4646,7 +4814,7 @@ Decomment.prototype = {
 			var isConflict = that.isCommentConflict(commentMap);
 			var commentInfo;
 			if (columnName) {
-				var columnNameOfTable = columnName + " of " + tableName;
+				var columnNameOfTable = tableName + "." + columnName;
 				columnInfo = isConflict ? columnNameOfTable + " ... but now in CONFLICT!" : columnNameOfTable;
 			} else {
 				columnInfo = isConflict ? tableName + " ... but now in CONFLICT!" : tableName;
@@ -4657,7 +4825,7 @@ Decomment.prototype = {
 			inputElement.value = that.extractPreviousComment(commentElement);
 			inputElement.focus();
 
-			document.getElementById("decomment-cancel").onclick = function () {
+			document.getElementById("decomment-close").onclick = function () {
 				modalElement.style.display = "none";
 			};
 
@@ -4737,7 +4905,7 @@ Decomment.prototype = {
 	extractPreviousComment: function (columnCommentElemnet) {
 		var child = columnCommentElemnet.querySelector('pre').childNodes[0];
 		if (child != null && child.nodeName === "#text") {
-			return child.nodeValue;
+			return child.nodeValue.trim();
 		}
 		return "";
 	},
