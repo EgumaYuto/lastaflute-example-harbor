@@ -1,0 +1,39 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+
+
+test
+
+もうコンフリクトはしないはず
+
+やったぜ！
+
+なんか問題はなさそうなかんじだ。
+。だじんかなうそさなは題問かんな
+
+ぜたっや！
+
+author
+    ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; yuto
+        ; tominaga
+        ; jflute
+        ; ryohei
+        ; yuto
+    }
+    ; pieceCode = ed69deb3
+    ; pieceDatetime = 2017-12-30T20:56:05.357
+    ; pieceOwner = yuto
+    ; previousPieceList = list:{
+        ; 57d5ff9a
+    }
+}
