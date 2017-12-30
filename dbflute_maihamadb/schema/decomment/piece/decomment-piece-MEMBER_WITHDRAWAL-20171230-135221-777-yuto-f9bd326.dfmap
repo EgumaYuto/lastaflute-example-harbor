@@ -1,0 +1,29 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER_WITHDRAWAL
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 退会会員の退会に関する詳細な情報。
+退会会員のみデータが存在し、&quot\;1 : 0..1&quot\; のパターンの one-to-one である。
+共通カラムがあってバージョンNOがないパターン。
+基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。
+退会は悲しい
+
+
+ここからも訂正できるのね
+    ; databaseComment = 退会会員の退会に関する詳細な情報。
+退会会員のみデータが存在し、"1&nbsp\;:&nbsp\;0..1"&nbsp\;のパターンの&nbsp\;one-to-one&nbsp\;である。
+共通カラムがあってバージョンNOがないパターン。
+基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+        ; yuto
+    }
+    ; pieceCode = f9bd326
+    ; pieceDatetime = 2017-12-30T13:52:21.775
+    ; pieceOwner = yuto
+    ; previousPieceList = list:{
+        ; 3c34cdbd
+    }
+}
