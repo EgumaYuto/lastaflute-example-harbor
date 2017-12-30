@@ -1,6 +1,6 @@
 map:{
     ; formatVersion = 1.0
-    ; pickupDatetime = 2017-12-29T17:47:02.677
+    ; pickupDatetime = 2017-12-30T21:34:04.878
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
@@ -10,28 +10,17 @@ map:{
                         ; decomment = 会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 
+あれ？ author に複数人入っている piece が存在する気が...
 
-test
-
-もうコンフリクトはしないはず
-
-やったぜ！
-
-なんか問題はなさそうなかんじだ。
-
-修正
-
-さらに追加
-
-さらに追加
+おかしい...
                         ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
-                        ; pieceCode = 5bc746b6
-                        ; pieceOwner = ryohei
-                        ; pieceDatetime = 2017-12-29T17:20:43.674
+                        ; pieceCode = a8646750
+                        ; pieceOwner = yuto
+                        ; pieceDatetime = 2017-12-30T20:59:27.137
                         ; previousPieceList = list:{
-                            ; 2994f2e1
+                            ; 9fdb6793
                         }
                         ; commentVersion = 0
                         ; authorList = list:{
@@ -49,17 +38,20 @@ test
                             ; map:{
                                 ; decomment = 連番として自動採番される。会員のIDだけに限らず採番方法はDBMS次第。
 基本はMySQLが多いので問題になることはほとんどない。
+
+decomment \;
                                 ; databaseComment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
-                                ; pieceCode = 64742007
-                                ; pieceOwner = ryohei
-                                ; pieceDatetime = 2017-12-29T16:59:22.599
+                                ; pieceCode = d941f67
+                                ; pieceOwner = yuto
+                                ; pieceDatetime = 2017-12-30T20:55:13.110
                                 ; previousPieceList = list:{
-                                    ; 425d2223
+                                    ; fb192f28
                                 }
                                 ; commentVersion = 0
                                 ; authorList = list:{
                                     ; tominaga
                                     ; ryohei
+                                    ; yuto
                                 }
                             }
                         }
@@ -104,22 +96,51 @@ test
                             }
                         }
                     }
+                    ; map:{
+                        ; columnName = MEMBER_ACCOUNT
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = ログインIDとして利用する。
+昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
+
+おかしいなぁ
+
+おかしいなぁ
+
+おかしいなぁ...
+                                ; databaseComment = ログインIDとして利用する。
+昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
+                                ; pieceCode = a273b0e8
+                                ; pieceOwner = yuto
+                                ; pieceDatetime = 2017-12-30T21:00:23.151
+                                ; previousPieceList = list:{
+                                    ; 9936ba71
+                                }
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                            }
+                        }
+                    }
                 }
             }
             ; map:{
                 ; tableName = MEMBER_SECURITY
                 ; propertyList = list:{
                     ; map:{
-                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある
-dfsafa
+                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。
                         ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;で、会員一人につき必ず一つのセキュリティ情報がある
-                        ; pieceCode = 36b237b9
-                        ; pieceOwner = tominaga
-                        ; pieceDatetime = 2017-12-29T15:44:41.632
-                        ; previousPieceList = list:{}
+                        ; pieceCode = 339d5b82
+                        ; pieceOwner = ryohei
+                        ; pieceDatetime = 2017-12-29T17:33:39.977
+                        ; previousPieceList = list:{
+                            ; 36b237b9
+                        }
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; tominaga
+                            ; ryohei
                         }
                     }
                 }
@@ -132,17 +153,22 @@ dfsafa
                         ; decomment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
 会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
 有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot\;1 : 0..1&quot\; である。
-かぼすはかぼさない。いやかぼす。
+かぼすはかぼさない。いやかぼす♪。💕
+
+いけるんですね〜 by かぼす
                         ; databaseComment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
 会員を基点に考えた場合、構造的には&nbsp\;one-to-many&nbsp\;だが、業務的な定型条件で&nbsp\;one-to-one&nbsp\;になる。このような構造を「業務的one-to-one」と呼ぶ！
 有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp\;"1&nbsp\;:&nbsp\;0..1"&nbsp\;である。
-                        ; pieceCode = 15c2679c
-                        ; pieceOwner = jflute
-                        ; pieceDatetime = 2017-12-29T16:57:13.425
-                        ; previousPieceList = list:{}
+                        ; pieceCode = e7633359
+                        ; pieceOwner = yuto
+                        ; pieceDatetime = 2017-12-30T20:53:51.622
+                        ; previousPieceList = list:{
+                            ; 630b8ac4
+                        }
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; jflute
+                            ; yuto
                         }
                     }
                 }
@@ -164,11 +190,133 @@ dfsafa
                             }
                         }
                     }
+                    ; map:{
+                        ; columnName = UPDATE_DATETIME
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 更新日時
+                                ; databaseComment = null
+                                ; pieceCode = 44520528
+                                ; pieceOwner = tominaga
+                                ; pieceDatetime = 2017-12-29T18:13:41.393
+                                ; previousPieceList = list:{
+                                    ; 130ff842
+                                    ; dd20d71
+                                }
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = REGISTER_USER
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 登録ユーザー
+                                ; databaseComment = null
+                                ; pieceCode = 157f01a2
+                                ; pieceOwner = ryohei
+                                ; pieceDatetime = 2017-12-29T17:30:43.928
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; ryohei
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = UPDATE_USER
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 更新会員
+                                ; databaseComment = null
+                                ; pieceCode = 6a3761c0
+                                ; pieceOwner = tominaga
+                                ; pieceDatetime = 2017-12-29T18:04:37.870
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = VERSION_NO
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = バージョンNo
+同時更新をされないようにします。
+                                ; databaseComment = null
+                                ; pieceCode = 7a4fbf4e
+                                ; pieceOwner = tominaga
+                                ; pieceDatetime = 2017-12-29T18:05:24.481
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                            }
+                        }
+                    }
                 }
             }
             ; map:{
                 ; tableName = PRODUCT
-                ; propertyList = list:{}
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 商品のテーブル。定価とか品番とかを持つ。
+
+SQLとかかいてみたりするコメントとかありそう
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+
+
+-- 商品と商品カテゴリーを一緒に取得
+select * from PRODUCT p
+  inner join PRODUCT_CATEGORY pc
+     on p.PRODUCT_ID \= pc.PRODUCT_ID\;
+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
+
+
+2017/12/29 ＼(^o^)／
+2016/12/29 カラム追加
+2015/12/29 作成
+
+
+多分DBFluteハンズオンsection3くらいからよく使うテーブル
+http://dbflute.seasar.org/ja/tutorial/handson/section03.html
+                        ; databaseComment = null
+                        ; pieceCode = 30d4e5da
+                        ; pieceOwner = ryohei
+                        ; pieceDatetime = 2017-12-29T17:43:08.524
+                        ; previousPieceList = list:{
+                            ; 30b1dfc0
+                        }
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; ryohei
+                        }
+                    }
+                }
                 ; columnList = list:{
                     ; map:{
                         ; columnName = PRODUCT_STATUS_CODE
@@ -215,6 +363,58 @@ dfsafa
                                 ; pieceCode = 31d6aa5f
                                 ; pieceOwner = ryohei
                                 ; pieceDatetime = 2017-12-29T16:57:24.775
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; ryohei
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = UPDATE_USER
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 更新したユーザー
+                                ; databaseComment = null
+                                ; pieceCode = 5a4b6967
+                                ; pieceOwner = tominaga
+                                ; pieceDatetime = 2017-12-29T17:49:02.999
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = REGISTER_DATETIME
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 商品の登録日時ですよ。
+                                ; databaseComment = null
+                                ; pieceCode = 5712f64b
+                                ; pieceOwner = ryohei
+                                ; pieceDatetime = 2017-12-29T17:31:53.175
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; ryohei
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = PRODUCT_HANDLE_CODE
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = これだけは書いておこう、商品を識別する業務上のコード。よく品番とか言うかもしれませんねぇ...
+こんなカラムあったっけ？！
+                                ; databaseComment = これだけは書いておこう、商品を識別する業務上のコード。よく品番とか言うかもしれませんねぇ...
+                                ; pieceCode = 3fe928b6
+                                ; pieceOwner = ryohei
+                                ; pieceDatetime = 2017-12-29T17:36:07.108
                                 ; previousPieceList = list:{}
                                 ; commentVersion = 0
                                 ; authorList = list:{
@@ -271,15 +471,43 @@ dfsafa
                         ; columnName = WITHDRAWAL_REASON_CODE
                         ; propertyList = list:{
                             ; map:{
-                                ; decomment = 隊愛理由コード！3文字で示すのだ。
+                                ; decomment = 退会理由コード！3文字で示すのだ。
                                 ; databaseComment = null
-                                ; pieceCode = 34592a23
+                                ; pieceCode = 2a1d2270
                                 ; pieceOwner = ryohei
-                                ; pieceDatetime = 2017-12-29T16:57:49.702
-                                ; previousPieceList = list:{}
+                                ; pieceDatetime = 2017-12-29T17:32:55.296
+                                ; previousPieceList = list:{
+                                    ; 34592a23
+                                }
                                 ; commentVersion = 0
                                 ; authorList = list:{
                                     ; ryohei
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = WITHDRAWAL_REASON_TEXT
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 退会理由の内容。
+テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。
+それをきれいに見せるのがデザイナーの腕の見せ所ですね。。。。。
+
+コンフリクトを解消しました
+                                ; databaseComment = 退会理由の内容。
+テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。
+                                ; pieceCode = 45c3e9dc
+                                ; pieceOwner = tominaga
+                                ; pieceDatetime = 2017-12-29T19:00:59.799
+                                ; previousPieceList = list:{
+                                    ; 6a6e2f98
+                                    ; 52fd85c9
+                                    ; 929de3c
+                                }
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
                                 }
                             }
                         }
@@ -299,6 +527,149 @@ dfsafa
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; jflute
+                        }
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
+                ; tableName = PRODUCT_CATEGORY
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。
+
+URLとかかけないのかなぁ...
+
+http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
+
+リンクが押せると最高なんだけどね 笑
+                        ; databaseComment = 商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。
+                        ; pieceCode = 12a8c2b7
+                        ; pieceOwner = yuto
+                        ; pieceDatetime = 2017-12-30T20:50:33.293
+                        ; previousPieceList = list:{
+                            ; 752f9d50
+                        }
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; yuto
+                        }
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
+                ; tableName = MEMBER_SERVICE
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。
+
+小文字に変更されないかテストをする
+そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27\;
+というか絵文字は？💖
+                        ; databaseComment = 会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp\;one-to-one&nbsp\;を表現している。
+                        ; pieceCode = 767ffa1f
+                        ; pieceOwner = jflute
+                        ; pieceDatetime = 2017-12-30T13:57:43.891
+                        ; previousPieceList = list:{
+                            ; ab95e92
+                        }
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; jflute
+                        }
+                    }
+                }
+                ; columnList = list:{
+                    ; map:{
+                        ; columnName = SERVICE_POINT_COUNT
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 明らかにおかしいカラム名
+                                ; databaseComment = 購入したら増えて使ったら減る。
+                                ; pieceCode = 4bc473be
+                                ; pieceOwner = yuto
+                                ; pieceDatetime = 2017-12-30T13:51:58.786
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = MEMBER_SERVICE_ID
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 独立した主キーとなるが、実質的に会員IDとは one-to-one である。
+                                ; databaseComment = 独立した主キーとなるが、実質的に会員IDとは&nbsp\;one-to-one&nbsp\;である。
+                                ; pieceCode = 25a8d9e5
+                                ; pieceOwner = tominaga
+                                ; pieceDatetime = 2017-12-29T17:54:35.653
+                                ; previousPieceList = list:{}
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ; map:{
+                ; tableName = MEMBER_WITHDRAWAL
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 退会会員の退会に関する詳細な情報。
+退会会員のみデータが存在し、&quot\;1 : 0..1&quot\; のパターンの one-to-one である。
+共通カラムがあってバージョンNOがないパターン。
+基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。
+退会は悲しい
+
+
+ここからも訂正できるのね
+                        ; databaseComment = 退会会員の退会に関する詳細な情報。
+退会会員のみデータが存在し、"1&nbsp\;:&nbsp\;0..1"&nbsp\;のパターンの&nbsp\;one-to-one&nbsp\;である。
+共通カラムがあってバージョンNOがないパターン。
+基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。
+                        ; pieceCode = f9bd326
+                        ; pieceOwner = yuto
+                        ; pieceDatetime = 2017-12-30T13:52:21.775
+                        ; previousPieceList = list:{
+                            ; 3c34cdbd
+                        }
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; yuto
+                        }
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
+                ; tableName = MEMBER_STATUS
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
+
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
+                        ; databaseComment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
+
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
+                        ; pieceCode = 1d1af0e7
+                        ; pieceOwner = tominaga
+                        ; pieceDatetime = 2017-12-29T18:48:35.348
+                        ; previousPieceList = list:{}
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
                         }
                     }
                 }
