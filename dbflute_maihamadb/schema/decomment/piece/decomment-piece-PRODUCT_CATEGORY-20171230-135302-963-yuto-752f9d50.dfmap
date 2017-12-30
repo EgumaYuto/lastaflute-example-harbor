@@ -1,0 +1,20 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = PRODUCT_CATEGORY
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。
+
+URLとかかけないのかなぁ...
+
+http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
+    ; databaseComment = 商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; yuto
+    }
+    ; pieceCode = 752f9d50
+    ; pieceDatetime = 2017-12-30T13:53:02.961
+    ; pieceOwner = yuto
+    ; previousPieceList = list:{}
+}
