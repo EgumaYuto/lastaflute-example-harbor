@@ -1,26 +1,22 @@
 map:{
     ; formatVersion = 1.0
-    ; pickupDatetime = 2017-12-31T23:14:09.482
+    ; pickupDatetime = 2017-12-31T23:27:43.052
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
                 ; tableName = MEMBER
                 ; propertyList = list:{
                     ; map:{
-                        ; decomment = piece 1
-piece 2
-piece 3
+                        ; decomment = resolve
                         ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
-                        ; pieceCode = 3a31a447
+                        ; pieceCode = c876db1c
                         ; pieceOwner = yuto
-                        ; pieceDatetime = 2017-12-31T23:14:02.050
+                        ; pieceDatetime = 2017-12-31T23:25:18.650
                         ; previousPieceList = list:{
-                            ; 88fa649c
-                            ; b8f3e958
-                            ; bac9263b
-                            ; 576cca17
+                            ; 4b1ab9fb
+                            ; 1582669b
                         }
                         ; commentVersion = 0
                         ; authorList = list:{
