@@ -1,6 +1,6 @@
 map:{
     ; formatVersion = 1.0
-    ; pickupDatetime = 2017-12-31T23:27:43.052
+    ; pickupDatetime = 2018-01-01T00:26:45.644
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
@@ -106,17 +106,22 @@ decomment \;
 おかしいなぁ...
 
 治った...
+
+良かった...
+
+たっか良...
                                 ; databaseComment = ログインIDとして利用する。
 昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
-                                ; pieceCode = ea050467
-                                ; pieceOwner = yuto
-                                ; pieceDatetime = 2017-12-30T21:37:00.902
+                                ; pieceCode = cac1cdce
+                                ; pieceOwner = jflute
+                                ; pieceDatetime = 2017-12-31T23:36:30.697
                                 ; previousPieceList = list:{
-                                    ; a273b0e8
+                                    ; 6916ca6b
                                 }
                                 ; commentVersion = 0
                                 ; authorList = list:{
                                     ; yuto
+                                    ; jflute
                                 }
                             }
                         }
@@ -127,18 +132,19 @@ decomment \;
                 ; tableName = MEMBER_SECURITY
                 ; propertyList = list:{
                     ; map:{
-                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。
+                        ; decomment = 完全上書き
                         ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;で、会員一人につき必ず一つのセキュリティ情報がある
-                        ; pieceCode = 339d5b82
-                        ; pieceOwner = ryohei
-                        ; pieceDatetime = 2017-12-29T17:33:39.977
+                        ; pieceCode = ff3cad2a
+                        ; pieceOwner = jflute
+                        ; pieceDatetime = 2017-12-31T23:36:54.742
                         ; previousPieceList = list:{
-                            ; 36b237b9
+                            ; 339d5b82
                         }
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; tominaga
                             ; ryohei
+                            ; jflute
                         }
                     }
                 }
@@ -154,14 +160,15 @@ decomment \;
 かぼすはかぼさない。いやかぼす♪。💕
 
 いけるんですね〜 by かぼす
+いけるんですよ〜 by くぼす
                         ; databaseComment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
 会員を基点に考えた場合、構造的には&nbsp\;one-to-many&nbsp\;だが、業務的な定型条件で&nbsp\;one-to-one&nbsp\;になる。このような構造を「業務的one-to-one」と呼ぶ！
 有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp\;"1&nbsp\;:&nbsp\;0..1"&nbsp\;である。
-                        ; pieceCode = e7633359
-                        ; pieceOwner = yuto
-                        ; pieceDatetime = 2017-12-30T20:53:51.622
+                        ; pieceCode = b81a64f2
+                        ; pieceOwner = jflute
+                        ; pieceDatetime = 2017-12-31T23:35:46.575
                         ; previousPieceList = list:{
-                            ; 630b8ac4
+                            ; e7633359
                         }
                         ; commentVersion = 0
                         ; authorList = list:{
@@ -540,15 +547,18 @@ piece test4
                 ; tableName = MEMBER_FOLLOWING
                 ; propertyList = list:{
                     ; map:{
-                        ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。
+                        ; decomment = 普通に編集すると piece code が一個だけであることを確認
                         ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
-                        ; pieceCode = 1cde89d9
-                        ; pieceOwner = jflute
-                        ; pieceDatetime = 2017-12-29T16:57:34.667
-                        ; previousPieceList = list:{}
+                        ; pieceCode = ec9ef592
+                        ; pieceOwner = yuto
+                        ; pieceDatetime = 2017-12-31T23:28:34.105
+                        ; previousPieceList = list:{
+                            ; 1cde89d9
+                        }
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; jflute
+                            ; yuto
                         }
                     }
                 }
@@ -590,13 +600,16 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
 小文字に変更されないかテストをする
 そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27\;
 というか絵文字は？💖
+えーもじやなー
+えっ文字？
+えもーしょなるな文字
                         ; databaseComment = 会員のサービス情報（ポイントサービスなど）。
 テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp\;one-to-one&nbsp\;を表現している。
-                        ; pieceCode = 767ffa1f
+                        ; pieceCode = 285cf3ba
                         ; pieceOwner = jflute
-                        ; pieceDatetime = 2017-12-30T13:57:43.891
+                        ; pieceDatetime = 2017-12-31T23:36:12.581
                         ; previousPieceList = list:{
-                            ; ab95e92
+                            ; 27f2d7cf
                         }
                         ; commentVersion = 0
                         ; authorList = list:{
@@ -680,21 +693,29 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                 ; tableName = MEMBER_STATUS
                 ; propertyList = list:{
                     ; map:{
-                        ; decomment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
-業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
-
-こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
+                        ; decomment = 一気にマージ！！
                         ; databaseComment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
 業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
 
 こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
-                        ; pieceCode = 1d1af0e7
-                        ; pieceOwner = tominaga
-                        ; pieceDatetime = 2017-12-29T18:48:35.348
-                        ; previousPieceList = list:{}
+                        ; pieceCode = 51422dba
+                        ; pieceOwner = yuto
+                        ; pieceDatetime = 2018-01-01T00:12:02.624
+                        ; previousPieceList = list:{
+                            ; bd0d003d
+                            ; e15662c3
+                            ; 203e50a4
+                            ; 37d997e1
+                        }
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; tominaga
+                            ; jflute
+                            ; yuto
+                            ; chan
+                            ; nulll
+                            ; kachi
+                            ; cabos
                         }
                     }
                 }
@@ -710,162 +731,42 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                             ; map:{
                                 ; decomment = 支払ったときの日時
 この辺だったらバレないんじゃないか、コード貼り付けてやるウヒヒ
-/*
- * Copyright 2014-2017 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the &quot\;License&quot\;)\;
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an &quot\;AS IS&quot\; BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
- * either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-package org.dbflute.intro.app.web.document.decomment\;
 
-import java.time.LocalDateTime\;
-import java.util.ArrayList\;
-import java.util.LinkedHashSet\;
-import java.util.Set\;
-
-import javax.annotation.Resource\;
-
-import org.apache.commons.lang3.StringUtils\;
-import org.dbflute.infra.doc.decomment.DfDecoMapPickup\;
-import org.dbflute.infra.doc.decomment.DfDecoMapPiece\;
-import org.dbflute.infra.doc.decomment.DfDecoMapPieceTargetType\;
-import org.dbflute.intro.app.logic.document.decomment.DocumentDecommentPhysicalLogic\;
-import org.dbflute.intro.app.web.base.IntroBaseAction\;
-import org.dbflute.intro.mylasta.action.IntroMessages\;
-import org.lastaflute.core.time.TimeManager\;
-import org.lastaflute.core.util.LaStringUtil\;
-import org.lastaflute.web.Execute\;
-import org.lastaflute.web.response.JsonResponse\;
-
-// done cabos decoment to decomment by jflute (2017/07/27)
-
-/**
- * @author cabos
- * @author hakiba
- * @author deco
- */
-public class DocumentDecommentAction extends IntroBaseAction \{
-
-    // \=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
-    //                                                                           Attribute
-    //                                                                           \=\=\=\=\=\=\=\=\=
-    @Resource
-    private TimeManager timeManager\;
-    @Resource
-    private DocumentDecommentPhysicalLogic decommentPhysicalLogic\;
-
-    // done cabos use _taexec and use _tanest by jflute (2017/08/10)
-    // \=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=
-    //                                                                             Execute
-    //                                                                             \=\=\=\=\=\=\=
-    // -----------------------------------------------------
-    //                                             Piece Map
-    //                                             ---------
-    // done cabos post to save, get to diff by jflute (2017/07/27)
-    // done cabos javadoc with e.g. value by jflute (2017/09/28)
-    /**
-     * save decomment piece map
-     *
-     * @param projectName project name e.g. maihamadb (NotNull)
-     * @param body decomment save body (NotNull)
-     * @return void (NotNull)
-     */
-    @Execute(urlPattern \= &quot\;\{\}/@word&quot\;)
-    public JsonResponse&lt\;Void&gt\; save(String projectName, DecommentSaveBody body) \{
-        // done cabos validate columnName exists if target type is COLUMN in more validation by jflute (2017/11/11)
-        // this is as client error so you can use verifyOrClientError(debugMsg, expectedBool)\;
-        validate(body, messages -&gt\; moreValidate(body, messages))\;
-        verifyOrClientError(buildDebugMessage(body), existsColumnNameIfTargetTypeColumn(body))\;
-        decommentPhysicalLogic.saveDecommentPiece(projectName, mappingToDecoMapPiece(body))\;
-        return JsonResponse.asEmptyBody()\;
-    \}
-
-    private void moreValidate(DecommentSaveBody body, IntroMessages messages) \{
-        if (DfDecoMapPieceTargetType.Column \=\= body.targetType &amp\;&amp\; StringUtils.isEmpty(body.columnName)) \{
-            messages.addConstraintsNotEmptyMessage(&quot\;columnName&quot\;)\;
-        \}
-    \}
-
-    // done cabos unneeded public here, change to private by jflute (2017/11/12)
-    private String buildDebugMessage(DecommentSaveBody body) \{
-        StringBuilder sb \= new StringBuilder()\;
-        sb.append(&quot\;If targetType is COLUMN, columnName must exists.&quot\;).append(&quot\;\n&quot\;)\;
-        sb.append(&quot\;   targetType : &quot\;).append(body.targetType.code()).append(&quot\;\n&quot\;)\;
-        sb.append(&quot\;   columnName : &quot\;).append(body.columnName).append(&quot\;\n&quot\;)\;
-        return sb.toString()\;
-    \}
-
-    // done cabos change exist to exists for boolean expression by jflute (2017/11/12)
-    private boolean existsColumnNameIfTargetTypeColumn(DecommentSaveBody body) \{
-        return !(DfDecoMapPieceTargetType.Column \=\= body.targetType &amp\;&amp\; LaStringUtil.isEmpty(body.columnName))\;
-    \}
-
-    // done cabos use mappingTo... by jflute (2017/08/10)
-    private DfDecoMapPiece mappingToDecoMapPiece(DecommentSaveBody body) \{
-        // done cabos rename pieceMap to piece (can be simple here) by jflute (2017/11/11)
-        String author \= getAuthor()\;
-        Set&lt\;String&gt\; authorSet \= new LinkedHashSet&lt\;&gt\;(body.authors)\;
-        authorSet.add(author)\;
-        LocalDateTime pieceDatetime \= timeManager.currentDateTime()\;
-        DfDecoMapPiece piece \= new DfDecoMapPiece(DfDecoMapPiece.DEFAULT_FORMAT_VERSION, body.tableName, body.columnName, body.targetType,
-                body.decomment, body.databaseComment, body.commentVersion, new ArrayList&lt\;&gt\;(authorSet),
-                buildPieceCode(body, pieceDatetime, author), pieceDatetime, author, body.previousPieces)\;
-        return piece\;
-    \}
-
-    private String getAuthor() \{
-        return decommentPhysicalLogic.getAuthor()\;
-    \}
-
-    private String buildPieceCode(DecommentSaveBody body, LocalDateTime pieceDateTime, String author) \{
-        // done (by cabos) deco use tableName, columnName, date-time, owner by jflute (2017/11/11)
-        StringBuilder sb \= new StringBuilder()\;
-        sb.append(body.tableName)\;
-        sb.append(&quot\;:&quot\;).append(body.columnName !\= null ? body.columnName : &quot\;&quot\;)\;
-        sb.append(&quot\;:&quot\;).append(body.targetType)\;
-        sb.append(&quot\;:&quot\;).append(pieceDateTime)\;
-        sb.append(&quot\;:&quot\;).append(author)\;
-        return Integer.toHexString(sb.toString().hashCode())\;
-    \}
-
-    // -----------------------------------------------------
-    //                                            Pickup Map
-    //                                            ----------
-    // done hakiba rename piece to pickup by jflute (2017/08/17)
-    /**
-     * save decomment piece map
-     *
-     * @param projectName project name e.g. maihamadb (NotNull)
-     * @return merged pickup as json (NotNull)
-     */
-    @Execute(urlPattern \= &quot\;\{\}/@word&quot\;)
-    public JsonResponse&lt\;DecommentPickupResult&gt\; pickup(String projectName) \{
-        DfDecoMapPickup dfDecoMapPickup \= decommentPhysicalLogic.readMergedPickup(projectName)\;
-        return asJson(new DecommentPickupResult(dfDecoMapPickup.getTableList()))\;
-    \}
-\}
+ソースコード長いので消しますね
                                 ; databaseComment = 支払ったときの日時
-                                ; pieceCode = 665c2ae4
-                                ; pieceOwner = jflute
-                                ; pieceDatetime = 2017-12-31T16:13:12.641
-                                ; previousPieceList = list:{}
+                                ; pieceCode = a0130cea
+                                ; pieceOwner = yuto
+                                ; pieceDatetime = 2017-12-31T23:54:12.087
+                                ; previousPieceList = list:{
+                                    ; 665c2ae4
+                                }
                                 ; commentVersion = 0
                                 ; authorList = list:{
                                     ; jflute
+                                    ; yuto
                                 }
                             }
                         }
                     }
                 }
+            }
+            ; map:{
+                ; tableName = PRODUCT_STATUS
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 商品のステータスを表現する固定的なマスタ。
+                        ; databaseComment = 商品のステータスを表現する固定的なマスタ。
+                        ; pieceCode = 536d5f00
+                        ; pieceOwner = yuto
+                        ; pieceDatetime = 2018-01-01T00:01:09.853
+                        ; previousPieceList = list:{}
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; yuto
+                        }
+                    }
+                }
+                ; columnList = list:{}
             }
         }
     }

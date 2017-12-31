@@ -3773,13 +3773,13 @@ function Decomment() {
 						'columnName': 'MEMBER_ACCOUNT'
 						, 'properties': [
 								 {
-								'decomment': 'ログインIDとして利用する。<br>昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?<br><br>おかしいなぁ<br><br>おかしいなぁ<br><br>おかしいなぁ...<br><br>治った...'
+								'decomment': 'ログインIDとして利用する。<br>昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?<br><br>おかしいなぁ<br><br>おかしいなぁ<br><br>おかしいなぁ...<br><br>治った...<br><br>良かった...<br><br>たっか良...'
 								, 'databaseComment': 'ログインIDとして利用する。<br>昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?'
 								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': 'ea050467'
-								, 'pieceDatatime': '2017-12-30T21:37:00.902'
-								, 'previousPieces': ['a273b0e8']
+								, 'authors': ['yuto','jflute']
+								, 'pieceCode': 'cac1cdce'
+								, 'pieceDatatime': '2017-12-31T23:36:30.697'
+								, 'previousPieces': ['6916ca6b']
 							}
 						]
 					}
@@ -3789,13 +3789,13 @@ function Decomment() {
 				'tableName': 'MEMBER_SECURITY'
 				, 'properties': [
 						 {
-						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。'
+						'decomment': '完全上書き'
 						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
 						, 'commentVersion': 0
-						, 'authors': ['tominaga','ryohei']
-						, 'pieceCode': '339d5b82'
-						, 'pieceDatatime': '2017-12-29T17:33:39.977'
-						, 'previousPieces': ['36b237b9']
+						, 'authors': ['tominaga','ryohei','jflute']
+						, 'pieceCode': 'ff3cad2a'
+						, 'pieceDatatime': '2017-12-31T23:36:54.742'
+						, 'previousPieces': ['339d5b82']
 					}
 				]
 				, 'columns': [
@@ -3805,13 +3805,13 @@ function Decomment() {
 				'tableName': 'MEMBER_ADDRESS'
 				, 'properties': [
 						 {
-						'decomment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot;1 : 0..1&quot; である。<br>かぼすはかぼさない。いやかぼす♪。💕<br><br>いけるんですね〜 by かぼす'
+						'decomment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot;1 : 0..1&quot; である。<br>かぼすはかぼさない。いやかぼす♪。💕<br><br>いけるんですね〜 by かぼす<br>いけるんですよ〜 by くぼす'
 						, 'databaseComment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には&nbsp;one-to-many&nbsp;だが、業務的な定型条件で&nbsp;one-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0..1"&nbsp;である。'
 						, 'commentVersion': 0
 						, 'authors': ['jflute','yuto']
-						, 'pieceCode': 'e7633359'
-						, 'pieceDatatime': '2017-12-30T20:53:51.622'
-						, 'previousPieces': ['630b8ac4']
+						, 'pieceCode': 'b81a64f2'
+						, 'pieceDatatime': '2017-12-31T23:35:46.575'
+						, 'previousPieces': ['e7633359']
 					}
 				]
 				, 'columns': [
@@ -4070,13 +4070,13 @@ function Decomment() {
 				'tableName': 'MEMBER_FOLLOWING'
 				, 'properties': [
 						 {
-						'decomment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。'
+						'decomment': '普通に編集すると piece code が一個だけであることを確認'
 						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
 						, 'commentVersion': 0
-						, 'authors': ['jflute']
-						, 'pieceCode': '1cde89d9'
-						, 'pieceDatatime': '2017-12-29T16:57:34.667'
-						, 'previousPieces': []
+						, 'authors': ['jflute','yuto']
+						, 'pieceCode': 'ec9ef592'
+						, 'pieceDatatime': '2017-12-31T23:28:34.105'
+						, 'previousPieces': ['1cde89d9']
 					}
 				]
 				, 'columns': [
@@ -4102,13 +4102,13 @@ function Decomment() {
 				'tableName': 'MEMBER_SERVICE'
 				, 'properties': [
 						 {
-						'decomment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。<br><br>小文字に変更されないかテストをする<br>そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27;<br>というか絵文字は？💖'
+						'decomment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。<br><br>小文字に変更されないかテストをする<br>そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27;<br>というか絵文字は？💖<br>えーもじやなー<br>えっ文字？<br>えもーしょなるな文字'
 						, 'databaseComment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。'
 						, 'commentVersion': 0
 						, 'authors': ['tominaga','jflute']
-						, 'pieceCode': '767ffa1f'
-						, 'pieceDatatime': '2017-12-30T13:57:43.891'
-						, 'previousPieces': ['ab95e92']
+						, 'pieceCode': '285cf3ba'
+						, 'pieceDatatime': '2017-12-31T23:36:12.581'
+						, 'previousPieces': ['27f2d7cf']
 					}
 				]
 				, 'columns': [
@@ -4162,13 +4162,13 @@ function Decomment() {
 				'tableName': 'MEMBER_STATUS'
 				, 'properties': [
 						 {
-						'decomment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
+						'decomment': '一気にマージ！！'
 						, 'databaseComment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
 						, 'commentVersion': 0
-						, 'authors': ['tominaga']
-						, 'pieceCode': '1d1af0e7'
-						, 'pieceDatatime': '2017-12-29T18:48:35.348'
-						, 'previousPieces': []
+						, 'authors': ['tominaga','jflute','yuto','chan','nulll','kachi','cabos']
+						, 'pieceCode': '51422dba'
+						, 'pieceDatatime': '2018-01-01T00:12:02.624'
+						, 'previousPieces': ['bd0d003d','e15662c3','203e50a4','37d997e1']
 					}
 				]
 				, 'columns': [
@@ -4183,16 +4183,32 @@ function Decomment() {
 						'columnName': 'PAYMENT_DATETIME'
 						, 'properties': [
 								 {
-								'decomment': '支払ったときの日時<br>この辺だったらバレないんじゃないか、コード貼り付けてやるウヒヒ<br>/*<br> * Copyright 2014-2017 the original author or authors.<br> *<br> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);<br> * you may not use this file except in compliance with the License.<br> * You may obtain a copy of the License at<br> *<br> *     http://www.apache.org/licenses/LICENSE-2.0<br> *<br> * Unless required by applicable law or agreed to in writing, software<br> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,<br> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,<br> * either express or implied. See the License for the specific language<br> * governing permissions and limitations under the License.<br> */<br>package org.dbflute.intro.app.web.document.decomment;<br><br>import java.time.LocalDateTime;<br>import java.util.ArrayList;<br>import java.util.LinkedHashSet;<br>import java.util.Set;<br><br>import javax.annotation.Resource;<br><br>import org.apache.commons.lang3.StringUtils;<br>import org.dbflute.infra.doc.decomment.DfDecoMapPickup;<br>import org.dbflute.infra.doc.decomment.DfDecoMapPiece;<br>import org.dbflute.infra.doc.decomment.DfDecoMapPieceTargetType;<br>import org.dbflute.intro.app.logic.document.decomment.DocumentDecommentPhysicalLogic;<br>import org.dbflute.intro.app.web.base.IntroBaseAction;<br>import org.dbflute.intro.mylasta.action.IntroMessages;<br>import org.lastaflute.core.time.TimeManager;<br>import org.lastaflute.core.util.LaStringUtil;<br>import org.lastaflute.web.Execute;<br>import org.lastaflute.web.response.JsonResponse;<br><br>// done cabos decoment to decomment by jflute (2017/07/27)<br><br>/**<br> * @author cabos<br> * @author hakiba<br> * @author deco<br> */<br>public class DocumentDecommentAction extends IntroBaseAction {<br><br>    // ===================================================================================<br>    //                                                                           Attribute<br>    //                                                                           =========<br>    @Resource<br>    private TimeManager timeManager;<br>    @Resource<br>    private DocumentDecommentPhysicalLogic decommentPhysicalLogic;<br><br>    // done cabos use _taexec and use _tanest by jflute (2017/08/10)<br>    // ===================================================================================<br>    //                                                                             Execute<br>    //                                                                             =======<br>    // -----------------------------------------------------<br>    //                                             Piece Map<br>    //                                             ---------<br>    // done cabos post to save, get to diff by jflute (2017/07/27)<br>    // done cabos javadoc with e.g. value by jflute (2017/09/28)<br>    /**<br>     * save decomment piece map<br>     *<br>     * @param projectName project name e.g. maihamadb (NotNull)<br>     * @param body decomment save body (NotNull)<br>     * @return void (NotNull)<br>     */<br>    @Execute(urlPattern = &quot;{}/@word&quot;)<br>    public JsonResponse&lt;Void&gt; save(String projectName, DecommentSaveBody body) {<br>        // done cabos validate columnName exists if target type is COLUMN in more validation by jflute (2017/11/11)<br>        // this is as client error so you can use verifyOrClientError(debugMsg, expectedBool);<br>        validate(body, messages -&gt; moreValidate(body, messages));<br>        verifyOrClientError(buildDebugMessage(body), existsColumnNameIfTargetTypeColumn(body));<br>        decommentPhysicalLogic.saveDecommentPiece(projectName, mappingToDecoMapPiece(body));<br>        return JsonResponse.asEmptyBody();<br>    }<br><br>    private void moreValidate(DecommentSaveBody body, IntroMessages messages) {<br>        if (DfDecoMapPieceTargetType.Column == body.targetType &amp;&amp; StringUtils.isEmpty(body.columnName)) {<br>            messages.addConstraintsNotEmptyMessage(&quot;columnName&quot;);<br>        }<br>    }<br><br>    // done cabos unneeded public here, change to private by jflute (2017/11/12)<br>    private String buildDebugMessage(DecommentSaveBody body) {<br>        StringBuilder sb = new StringBuilder();<br>        sb.append(&quot;If targetType is COLUMN, columnName must exists.&quot;).append(&quot;\n&quot;);<br>        sb.append(&quot;   targetType : &quot;).append(body.targetType.code()).append(&quot;\n&quot;);<br>        sb.append(&quot;   columnName : &quot;).append(body.columnName).append(&quot;\n&quot;);<br>        return sb.toString();<br>    }<br><br>    // done cabos change exist to exists for boolean expression by jflute (2017/11/12)<br>    private boolean existsColumnNameIfTargetTypeColumn(DecommentSaveBody body) {<br>        return !(DfDecoMapPieceTargetType.Column == body.targetType &amp;&amp; LaStringUtil.isEmpty(body.columnName));<br>    }<br><br>    // done cabos use mappingTo... by jflute (2017/08/10)<br>    private DfDecoMapPiece mappingToDecoMapPiece(DecommentSaveBody body) {<br>        // done cabos rename pieceMap to piece (can be simple here) by jflute (2017/11/11)<br>        String author = getAuthor();<br>        Set&lt;String&gt; authorSet = new LinkedHashSet&lt;&gt;(body.authors);<br>        authorSet.add(author);<br>        LocalDateTime pieceDatetime = timeManager.currentDateTime();<br>        DfDecoMapPiece piece = new DfDecoMapPiece(DfDecoMapPiece.DEFAULT_FORMAT_VERSION, body.tableName, body.columnName, body.targetType,<br>                body.decomment, body.databaseComment, body.commentVersion, new ArrayList&lt;&gt;(authorSet),<br>                buildPieceCode(body, pieceDatetime, author), pieceDatetime, author, body.previousPieces);<br>        return piece;<br>    }<br><br>    private String getAuthor() {<br>        return decommentPhysicalLogic.getAuthor();<br>    }<br><br>    private String buildPieceCode(DecommentSaveBody body, LocalDateTime pieceDateTime, String author) {<br>        // done (by cabos) deco use tableName, columnName, date-time, owner by jflute (2017/11/11)<br>        StringBuilder sb = new StringBuilder();<br>        sb.append(body.tableName);<br>        sb.append(&quot;:&quot;).append(body.columnName != null ? body.columnName : &quot;&quot;);<br>        sb.append(&quot;:&quot;).append(body.targetType);<br>        sb.append(&quot;:&quot;).append(pieceDateTime);<br>        sb.append(&quot;:&quot;).append(author);<br>        return Integer.toHexString(sb.toString().hashCode());<br>    }<br><br>    // -----------------------------------------------------<br>    //                                            Pickup Map<br>    //                                            ----------<br>    // done hakiba rename piece to pickup by jflute (2017/08/17)<br>    /**<br>     * save decomment piece map<br>     *<br>     * @param projectName project name e.g. maihamadb (NotNull)<br>     * @return merged pickup as json (NotNull)<br>     */<br>    @Execute(urlPattern = &quot;{}/@word&quot;)<br>    public JsonResponse&lt;DecommentPickupResult&gt; pickup(String projectName) {<br>        DfDecoMapPickup dfDecoMapPickup = decommentPhysicalLogic.readMergedPickup(projectName);<br>        return asJson(new DecommentPickupResult(dfDecoMapPickup.getTableList()));<br>    }<br>}'
+								'decomment': '支払ったときの日時<br>この辺だったらバレないんじゃないか、コード貼り付けてやるウヒヒ<br><br>ソースコード長いので消しますね'
 								, 'databaseComment': '支払ったときの日時'
 								, 'commentVersion': 0
-								, 'authors': ['jflute']
-								, 'pieceCode': '665c2ae4'
-								, 'pieceDatatime': '2017-12-31T16:13:12.641'
-								, 'previousPieces': []
+								, 'authors': ['jflute','yuto']
+								, 'pieceCode': 'a0130cea'
+								, 'pieceDatatime': '2017-12-31T23:54:12.087'
+								, 'previousPieces': ['665c2ae4']
 							}
 						]
 					}
+				]
+			}
+				, {
+				'tableName': 'PRODUCT_STATUS'
+				, 'properties': [
+						 {
+						'decomment': '商品のステータスを表現する固定的なマスタ。'
+						, 'databaseComment': '商品のステータスを表現する固定的なマスタ。'
+						, 'commentVersion': 0
+						, 'authors': ['yuto']
+						, 'pieceCode': '536d5f00'
+						, 'pieceDatatime': '2018-01-01T00:01:09.853'
+						, 'previousPieces': []
+					}
+				]
+				, 'columns': [
 				]
 			}
 		]}
