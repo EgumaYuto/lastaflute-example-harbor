@@ -1,6 +1,6 @@
 map:{
     ; formatVersion = 1.0
-    ; pickupDatetime = 2017-12-31T16:27:48.215
+    ; pickupDatetime = 2017-12-31T20:36:18.125
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
@@ -425,6 +425,30 @@ http://dbflute.seasar.org/ja/tutorial/handson/section03.html
                                 ; commentVersion = 0
                                 ; authorList = list:{
                                     ; ryohei
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = REGISTER_USER
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = piece test1
+piece test2
+piece test3
+piece test4
+                                ; databaseComment = null
+                                ; pieceCode = 7f66ef9
+                                ; pieceOwner = yuto
+                                ; pieceDatetime = 2017-12-31T20:32:26.116
+                                ; previousPieceList = list:{
+                                    ; a4585c02
+                                    ; d265175a
+                                    ; 78056264
+                                }
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
                                 }
                             }
                         }
