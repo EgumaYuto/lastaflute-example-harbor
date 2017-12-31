@@ -1,0 +1,30 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER_STATUS
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 一気にマージ！！
+    ; databaseComment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
+
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+        ; jflute
+        ; yuto
+        ; chan
+        ; nulll
+        ; kachi
+        ; cabos
+    }
+    ; pieceCode = 51422dba
+    ; pieceDatetime = 2018-01-01T00:12:02.624
+    ; pieceOwner = yuto
+    ; previousPieceList = list:{
+        ; bd0d003d
+        ; e15662c3
+        ; 203e50a4
+        ; 37d997e1
+    }
+}
