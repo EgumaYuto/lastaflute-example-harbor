@@ -1,29 +1,25 @@
 map:{
     ; formatVersion = 1.0
-    ; pickupDatetime = 2017-12-31T20:36:18.125
+    ; pickupDatetime = 2017-12-31T23:14:09.482
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
                 ; tableName = MEMBER
                 ; propertyList = list:{
                     ; map:{
-                        ; decomment = 会員のプロフィールやアカウントなどの基本情報を保持する。
-基本的に物理削除はなく、退会したらステータスが退会会員になる。
-
-あれ？ author に複数人入っている piece が存在する気が...
-
-おかしい...
-
-author が被らないことの
-
-最終確認asdf
+                        ; decomment = piece 1
+piece 2
+piece 3
                         ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
-                        ; pieceCode = bac9263b
+                        ; pieceCode = 3a31a447
                         ; pieceOwner = yuto
-                        ; pieceDatetime = 2017-12-30T21:57:24.953
+                        ; pieceDatetime = 2017-12-31T23:14:02.050
                         ; previousPieceList = list:{
+                            ; 88fa649c
+                            ; b8f3e958
+                            ; bac9263b
                             ; 576cca17
                         }
                         ; commentVersion = 0

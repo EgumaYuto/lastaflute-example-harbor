@@ -406,7 +406,7 @@ dl.procedurelist dd.column pre {
 		<td class="relcell"><a href="#member" title="FK_MEMBER_LOGIN_MEMBER">MEMBER</a>, <a href="#member_status" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_STATUS</a></td>
 		<td class="relcell">&nbsp;</td>
 		<td class="commentcell MEMBER_LOGIN_comment"><pre>ログインするたびに登録されるログイン履歴。
-登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></td>
+登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></td>
 		<td class="subcell">MemberLogin</td>
 	</tr>
 	<tr>
@@ -1116,7 +1116,7 @@ dl.procedurelist dd.column pre {
 (会員ログイン)MEMBER_LOGIN
 </h2>
 <div class="tablecomment MEMBER_LOGIN_comment" data-name="MEMBER_LOGIN"><pre>ログインするたびに登録されるログイン履歴。
-登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></div>
+登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></div>
 <input type="hidden" value="MEMBER_LOGIN">
 <table class="tablecontent">
 	<thead>
@@ -1190,7 +1190,7 @@ dl.procedurelist dd.column pre {
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
 		<td class="commentcell"><pre>ログインした瞬間の日時。
-同じ会員が同じ日時にログインはできない。(ユニーク制約で重複ログインできないようにしてある)</pre></td>
+同じ会員が同じ日時にログインはできない。はっはっは、DBコメント自体にHTMLタグ &lt;br&gt; 入れてやる by jflute。(ユニーク制約で重複ログインできないようにしてある)</pre></td>
 		<td class="subcell">loginDatetime</td>
 		<td class="subcell">LocalDateTime</td>
 	</tr>
@@ -3717,13 +3717,13 @@ function Decomment() {
 				'tableName': 'MEMBER'
 				, 'properties': [
 						 {
-						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br>あれ？ author に複数人入っている piece が存在する気が...<br><br>おかしい...<br><br>author が被らないことの<br><br>最終確認asdf'
+						'decomment': 'piece 1<br>piece 2<br>piece 3'
 						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
 						, 'commentVersion': 0
 						, 'authors': ['yuto','tominaga','jflute','ryohei']
-						, 'pieceCode': 'bac9263b'
-						, 'pieceDatatime': '2017-12-30T21:57:24.953'
-						, 'previousPieces': ['576cca17']
+						, 'pieceCode': '3a31a447'
+						, 'pieceDatatime': '2017-12-31T23:14:02.050'
+						, 'previousPieces': ['88fa649c','b8f3e958','bac9263b','576cca17']
 					}
 				]
 				, 'columns': [
@@ -4291,7 +4291,7 @@ function Decomment() {
 			}
 		}
 		, 'MEMBER_LOGIN': {
-			'databaseComment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。'
+			'databaseComment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。'
 			, 'columns': {
 				'MEMBER_LOGIN_ID': {
 					'databaseComment': ''
@@ -4300,7 +4300,7 @@ function Decomment() {
 					'databaseComment': ''
 				}
 				, 'LOGIN_DATETIME': {
-					'databaseComment': 'ログインした瞬間の日時。<br>同じ会員が同じ日時にログインはできない。(ユニーク制約で重複ログインできないようにしてある)'
+					'databaseComment': 'ログインした瞬間の日時。<br>同じ会員が同じ日時にログインはできない。はっはっは、DBコメント自体にHTMLタグ&nbsp;&lt;br&gt;&nbsp;入れてやる&nbsp;by&nbsp;jflute。(ユニーク制約で重複ログインできないようにしてある)'
 				}
 				, 'MOBILE_LOGIN_FLG': {
 					'databaseComment': 'モバイル機器からのログインか否か。'
