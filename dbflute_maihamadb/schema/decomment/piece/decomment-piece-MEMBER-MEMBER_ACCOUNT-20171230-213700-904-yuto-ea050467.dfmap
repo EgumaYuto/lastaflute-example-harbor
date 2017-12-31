@@ -1,0 +1,28 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER
+    ; columnName = MEMBER_ACCOUNT
+    ; targetType = COLUMN
+    ; decomment = ログインIDとして利用する。
+昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
+
+おかしいなぁ
+
+おかしいなぁ
+
+おかしいなぁ...
+
+治った...
+    ; databaseComment = ログインIDとして利用する。
+昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; yuto
+    }
+    ; pieceCode = ea050467
+    ; pieceDatetime = 2017-12-30T21:37:00.902
+    ; pieceOwner = yuto
+    ; previousPieceList = list:{
+        ; a273b0e8
+    }
+}
