@@ -3348,7 +3348,7 @@ dl.procedurelist dd.column pre {
 <!-- Only used by dbflute intro http://dbflute.seasar.org/ja/manual/function/helper/intro/index.html -->
 <div id="decomment-modal" class="decommentmodal">
 	<div class="decommentmodalcontent">
-		<button id="decomment-close" class="decommentmodal-close-btn"><span>x</span></button>
+		<div id="decomment-close" class="decommentmodal-close-btn"><span>x</span></div>
 		<p>Input the new column comment of <span id="decomment-modal-column-info"></span></p>
 		<textarea id="decomment-input" class="decommentinput" rows="5"></textarea>
 		<button id="decomment-ok" class="decommentmodal-ok-btn">OK</button>
@@ -3713,21 +3713,21 @@ function Decomment() {
 	// setup from dbflute if decomment pickup exists
 	this.embeddedPickup = {
 		'tables': [
-				 {
+			{
 				'tableName': 'MEMBER'
 				, 'properties': [
-						 {
-						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br>あれ？ author に複数人入っている piece が存在する気が...<br><br>おかしい...'
+						{
+						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br>あれ？ author に複数人入っている piece が存在する気が...<br><br>おかしい...<br><br>author が被らないことの<br><br>最終確認'
 						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
 						, 'commentVersion': 0
 						, 'authors': ['yuto','tominaga','jflute','ryohei']
-						, 'pieceCode': 'a8646750'
-						, 'pieceDatatime': '2017-12-30T20:59:27.137'
-						, 'previousPieces': ['9fdb6793']
+						, 'pieceCode': '7ed3845e'
+						, 'pieceDatatime': '2017-12-30T21:35:40.879'
+						, 'previousPieces': ['99ae0ed9']
 					}
 				]
 				, 'columns': [
-						 {
+					 {
 						'columnName': 'MEMBER_ID'
 						, 'properties': [
 								 {
@@ -3741,7 +3741,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'MEMBER_NAME'
 						, 'properties': [
 								 {
@@ -3755,7 +3755,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'BIRTHDATE'
 						, 'properties': [
 								 {
@@ -3769,7 +3769,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'MEMBER_ACCOUNT'
 						, 'properties': [
 								 {
@@ -3785,10 +3785,10 @@ function Decomment() {
 					}
 				]
 			}
-				, {
+			, {
 				'tableName': 'MEMBER_SECURITY'
 				, 'properties': [
-						 {
+						{
 						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。'
 						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
 						, 'commentVersion': 0
@@ -3801,10 +3801,10 @@ function Decomment() {
 				, 'columns': [
 				]
 			}
-				, {
+			, {
 				'tableName': 'MEMBER_ADDRESS'
 				, 'properties': [
-						 {
+						{
 						'decomment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot;1 : 0..1&quot; である。<br>かぼすはかぼさない。いやかぼす♪。💕<br><br>いけるんですね〜 by かぼす'
 						, 'databaseComment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には&nbsp;one-to-many&nbsp;だが、業務的な定型条件で&nbsp;one-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0..1"&nbsp;である。'
 						, 'commentVersion': 0
@@ -3815,7 +3815,7 @@ function Decomment() {
 					}
 				]
 				, 'columns': [
-						 {
+					 {
 						'columnName': 'REGISTER_DATETIME'
 						, 'properties': [
 								 {
@@ -3829,7 +3829,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'UPDATE_DATETIME'
 						, 'properties': [
 								 {
@@ -3843,7 +3843,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'REGISTER_USER'
 						, 'properties': [
 								 {
@@ -3857,7 +3857,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'UPDATE_USER'
 						, 'properties': [
 								 {
@@ -3871,7 +3871,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'VERSION_NO'
 						, 'properties': [
 								 {
@@ -3887,10 +3887,10 @@ function Decomment() {
 					}
 				]
 			}
-				, {
+			, {
 				'tableName': 'PRODUCT'
 				, 'properties': [
-						 {
+						{
 						'decomment': '商品のテーブル。定価とか品番とかを持つ。<br><br>SQLとかかいてみたりするコメントとかありそう<br>==================================================<br>-- 商品と商品カテゴリーを一緒に取得<br>select * from PRODUCT p<br>  inner join PRODUCT_CATEGORY pc<br>     on p.PRODUCT_ID = pc.PRODUCT_ID;<br><br>-- 商品と商品カテゴリーを一緒に取得<br>select * from PRODUCT p<br>  inner join PRODUCT_CATEGORY pc<br>     on p.PRODUCT_ID = pc.PRODUCT_ID;<br><br>select * from PRODUCT p<br>  inner join PRODUCT_CATEGORY pc<br>     on p.PRODUCT_ID = pc.PRODUCT_ID;<br>select * from PRODUCT p<br>  inner join PRODUCT_CATEGORY pc<br>     on p.PRODUCT_ID = pc.PRODUCT_ID;<br><br><br>-- 商品と商品カテゴリーを一緒に取得<br>select * from PRODUCT p<br>  inner join PRODUCT_CATEGORY pc<br>     on p.PRODUCT_ID = pc.PRODUCT_ID;<br>==================================================<br><br><br>2017/12/29 ＼(^o^)／<br>2016/12/29 カラム追加<br>2015/12/29 作成<br><br><br>多分DBFluteハンズオンsection3くらいからよく使うテーブル<br>http://dbflute.seasar.org/ja/tutorial/handson/section03.html'
 						, 'databaseComment': ''
 						, 'commentVersion': 0
@@ -3901,7 +3901,7 @@ function Decomment() {
 					}
 				]
 				, 'columns': [
-						 {
+					 {
 						'columnName': 'PRODUCT_STATUS_CODE'
 						, 'properties': [
 								 {
@@ -3915,7 +3915,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'REGULAR_PRICE'
 						, 'properties': [
 								 {
@@ -3929,7 +3929,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'PRODUCT_CATEGORY_CODE'
 						, 'properties': [
 								 {
@@ -3943,7 +3943,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'UPDATE_USER'
 						, 'properties': [
 								 {
@@ -3957,7 +3957,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'REGISTER_DATETIME'
 						, 'properties': [
 								 {
@@ -3971,7 +3971,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'PRODUCT_HANDLE_CODE'
 						, 'properties': [
 								 {
@@ -3987,10 +3987,10 @@ function Decomment() {
 					}
 				]
 			}
-				, {
+			, {
 				'tableName': 'MEMBER_LOGIN'
 				, 'properties': [
-						 {
+						{
 						'decomment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。<br>★ちょっとこのテーブル、デコメントした上でデータベースコメントも修正しちゃって、コンフリクトさせよう。'
 						, 'databaseComment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。'
 						, 'commentVersion': 0
@@ -4003,12 +4003,12 @@ function Decomment() {
 				, 'columns': [
 				]
 			}
-				, {
+			, {
 				'tableName': 'WITHDRAWAL_REASON'
 				, 'properties': [
 				]
 				, 'columns': [
-						 {
+					 {
 						'columnName': 'DISPLAY_ORDER'
 						, 'properties': [
 								 {
@@ -4022,7 +4022,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'WITHDRAWAL_REASON_CODE'
 						, 'properties': [
 								 {
@@ -4036,7 +4036,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'WITHDRAWAL_REASON_TEXT'
 						, 'properties': [
 								 {
@@ -4052,10 +4052,10 @@ function Decomment() {
 					}
 				]
 			}
-				, {
+			, {
 				'tableName': 'MEMBER_FOLLOWING'
 				, 'properties': [
-						 {
+						{
 						'decomment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。'
 						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
 						, 'commentVersion': 0
@@ -4068,10 +4068,10 @@ function Decomment() {
 				, 'columns': [
 				]
 			}
-				, {
+			, {
 				'tableName': 'PRODUCT_CATEGORY'
 				, 'properties': [
-						 {
+						{
 						'decomment': '商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。<br><br>URLとかかけないのかなぁ...<br><br>http://localhost:8926/api/document/maihamadb/schemahtml/#member_service<br><br>リンクが押せると最高なんだけどね 笑'
 						, 'databaseComment': '商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。'
 						, 'commentVersion': 0
@@ -4084,10 +4084,10 @@ function Decomment() {
 				, 'columns': [
 				]
 			}
-				, {
+			, {
 				'tableName': 'MEMBER_SERVICE'
 				, 'properties': [
-						 {
+						{
 						'decomment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。<br><br>小文字に変更されないかテストをする<br>そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27;<br>というか絵文字は？💖'
 						, 'databaseComment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。'
 						, 'commentVersion': 0
@@ -4098,7 +4098,7 @@ function Decomment() {
 					}
 				]
 				, 'columns': [
-						 {
+					 {
 						'columnName': 'SERVICE_POINT_COUNT'
 						, 'properties': [
 								 {
@@ -4112,7 +4112,7 @@ function Decomment() {
 							}
 						]
 					}
-						, {
+					, {
 						'columnName': 'MEMBER_SERVICE_ID'
 						, 'properties': [
 								 {
@@ -4128,10 +4128,10 @@ function Decomment() {
 					}
 				]
 			}
-				, {
+			, {
 				'tableName': 'MEMBER_WITHDRAWAL'
 				, 'properties': [
-						 {
+						{
 						'decomment': '退会会員の退会に関する詳細な情報。<br>退会会員のみデータが存在し、&quot;1 : 0..1&quot; のパターンの one-to-one である。<br>共通カラムがあってバージョンNOがないパターン。<br>基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。<br>退会は悲しい<br><br><br>ここからも訂正できるのね'
 						, 'databaseComment': '退会会員の退会に関する詳細な情報。<br>退会会員のみデータが存在し、"1&nbsp;:&nbsp;0..1"&nbsp;のパターンの&nbsp;one-to-one&nbsp;である。<br>共通カラムがあってバージョンNOがないパターン。<br>基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。'
 						, 'commentVersion': 0
@@ -4144,10 +4144,10 @@ function Decomment() {
 				, 'columns': [
 				]
 			}
-				, {
+			, {
 				'tableName': 'MEMBER_STATUS'
 				, 'properties': [
-						 {
+						{
 						'decomment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
 						, 'databaseComment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
 						, 'commentVersion': 0
@@ -4160,7 +4160,8 @@ function Decomment() {
 				, 'columns': [
 				]
 			}
-		]}
+		]
+	}
 	this.pickupStore = {
 		'MEMBER': {
 			'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
@@ -4859,7 +4860,11 @@ Decomment.prototype = {
 	buildDisplayCommentFromServer: function(commentMap) {
 		var result = "";
 		if (commentMap['isDatabaseCommentConflict']) {
-			result = this.escapeInputText(commentMap['databaseComment']) + '\n(from database comment)\n\n=======\n\n';
+			var databaseComment = commentMap['databaseComment'];
+			databaseComment = this.unescapeWhitespace(databaseComment);
+			databaseComment = this.escapeNewlineCharacter(databaseComment);
+			databaseComment = this.escapeInputText(databaseComment);
+			result = databaseComment + '\n(from database comment)\n\n=======\n\n';
 		}
 		result += commentMap['decomments'].join('\n\n=======\n\n');
 		return result;
@@ -5221,7 +5226,15 @@ Decomment.prototype = {
 	 * @param {String} string - text
 	 */
 	escapeNewlineCharacter: function (string) {
-		return string.split('<br>').join('\n')
+		return string.split('<br>').join('\n');
+	},
+
+	/**
+	 * Unescape whitespace character of text
+	 * @param {String} string - text
+	 */
+	unescapeWhitespace: function (string) {
+		return string.split('&nbsp;').join(' ');
 	},
 
 	/**
