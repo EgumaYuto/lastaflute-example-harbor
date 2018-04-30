@@ -30,7 +30,7 @@ import org.docksidestage.dbflute.exentity.*;
 /**
  * The entity of (会員ログイン)MEMBER_LOGIN as TABLE. <br>
  * ログインするたびに登録されるログイン履歴。<br>
- * 登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
+ * 登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
  * <pre>
  * [primary-key]
  *     MEMBER_LOGIN_ID
@@ -495,7 +495,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     /**
      * [get] (ログイン日時)LOGIN_DATETIME: {+UQ, IX, NotNull, TIMESTAMP(23, 10)} <br>
      * ログインした瞬間の日時。<br>
-     * 同じ会員が同じ日時にログインはできない。(ユニーク制約で重複ログインできないようにしてある)
+     * 同じ会員が同じ日時にログインはできない。はっはっは、DBコメント自体にHTMLタグ &lt;br&gt; 入れてやる by jflute。(ユニーク制約で重複ログインできないようにしてある)
      * @return The value of the column 'LOGIN_DATETIME'. (basically NotNull if selected: for the constraint)
      */
     public java.time.LocalDateTime getLoginDatetime() {
@@ -506,7 +506,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     /**
      * [set] (ログイン日時)LOGIN_DATETIME: {+UQ, IX, NotNull, TIMESTAMP(23, 10)} <br>
      * ログインした瞬間の日時。<br>
-     * 同じ会員が同じ日時にログインはできない。(ユニーク制約で重複ログインできないようにしてある)
+     * 同じ会員が同じ日時にログインはできない。はっはっは、DBコメント自体にHTMLタグ &lt;br&gt; 入れてやる by jflute。(ユニーク制約で重複ログインできないようにしてある)
      * @param loginDatetime The value of the column 'LOGIN_DATETIME'. (basically NotNull if update: for the constraint)
      */
     public void setLoginDatetime(java.time.LocalDateTime loginDatetime) {
