@@ -1,105 +1,33 @@
 map:{
     ; formatVersion = null
-    ; pickupDatetime = 2018-05-01T00:11:52.413
+    ; pickupDatetime = 2018-05-01T17:33:52.480
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
-                ; tableName = WITHDRAWAL_REASON
+                ; tableName = MEMBER_STATUS
                 ; mappingList = list:{}
-                ; propertyList = list:{}
-                ; columnList = list:{
+                ; propertyList = list:{
                     ; map:{
-                        ; columnName = DISPLAY_ORDER
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 表示順。一覧表示のときとかに使うと思う。
-                                ; databaseComment = null
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; ryohei
-                                }
-                                ; pieceCode = 6f5be9be
-                                ; pieceOwner = ryohei
-                                ; pieceGitBranch = null
-                                ; pieceDatetime = 2017-12-29T16:58:17.872
-                                ; previousPieceList = list:{}
-                            }
-                        }
-                    }
-                    ; map:{
-                        ; columnName = WITHDRAWAL_REASON_CODE
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 退会理由コード！3文字で示すのだ。
-                                ; databaseComment = null
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; ryohei
-                                }
-                                ; pieceCode = 2a1d2270
-                                ; pieceOwner = ryohei
-                                ; pieceGitBranch = null
-                                ; pieceDatetime = 2017-12-29T17:32:55.296
-                                ; previousPieceList = list:{
-                                    ; 34592a23
-                                }
-                            }
-                        }
-                    }
-                    ; map:{
-                        ; columnName = VERSION_NO
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = データのバージョンを示すナンバー。
-更新回数と等しく、主に排他制御のために利用される。
+                        ; decomment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
 
-変な感じにならないでよね
-                                ; databaseComment = データのバージョンを示すナンバー。
-更新回数と等しく、主に排他制御のために利用される。
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; yuto
-                                }
-                                ; pieceCode = f9fa03e6
-                                ; pieceOwner = yuto
-                                ; pieceGitBranch = master
-                                ; pieceDatetime = 2018-04-30T23:49:26.555
-                                ; previousPieceList = list:{}
-                            }
-                        }
-                    }
-                    ; map:{
-                        ; columnName = WITHDRAWAL_REASON_TEXT
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 退会理由の内容。
-テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。
-それをきれいに見せるのがデザイナーの腕の見せ所ですね。。。。。
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
+                        ; databaseComment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
 
-コンフリクトを解消しました
-                                ; databaseComment = 退会理由の内容。
-テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; tominaga
-                                }
-                                ; pieceCode = 45c3e9dc
-                                ; pieceOwner = tominaga
-                                ; pieceGitBranch = null
-                                ; pieceDatetime = 2017-12-29T19:00:59.799
-                                ; previousPieceList = list:{
-                                    ; 6a6e2f98
-                                    ; 52fd85c9
-                                    ; 929de3c
-                                }
-                            }
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
                         }
+                        ; pieceCode = 1d1af0e7
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-29T18:48:35.348
+                        ; previousPieceList = list:{}
                     }
                 }
+                ; columnList = list:{}
             }
             ; map:{
                 ; tableName = MEMBER_SERVICE
@@ -170,40 +98,27 @@ map:{
                 }
             }
             ; map:{
-                ; tableName = MEMBER_STATUS
-                ; mappingList = list:{}
-                ; propertyList = list:{
-                    ; map:{
-                        ; decomment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
-業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
-
-こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
-                        ; databaseComment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
-業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
-
-こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; tominaga
-                        }
-                        ; pieceCode = 1d1af0e7
-                        ; pieceOwner = tominaga
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-29T18:48:35.348
-                        ; previousPieceList = list:{}
-                    }
-                }
-                ; columnList = list:{}
-            }
-            ; map:{
-                ; tableName = OLD_MEMBER
+                ; tableName = WITHDRAWAL_REASON
                 ; mappingList = list:{}
                 ; propertyList = list:{}
                 ; columnList = list:{
                     ; map:{
-                        ; columnName = VERSION_NO
+                        ; columnName = DISPLAY_ORDER
                         ; mappingList = list:{}
                         ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 表示順。一覧表示のときとかに使うと思う。
+                                ; databaseComment = null
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; ryohei
+                                }
+                                ; pieceCode = 6f5be9be
+                                ; pieceOwner = ryohei
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-29T16:58:17.872
+                                ; previousPieceList = list:{}
+                            }
                             ; map:{
                                 ; decomment = データのバージョンを示すナンバー。
 更新回数と等しく、主に排他制御のために利用される。
@@ -223,30 +138,56 @@ map:{
                             }
                         }
                     }
-                }
-            }
-            ; map:{
-                ; tableName = MEMBER_SECURITY
-                ; mappingList = list:{}
-                ; propertyList = list:{
                     ; map:{
-                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。
-                        ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;で、会員一人につき必ず一つのセキュリティ情報がある
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; tominaga
-                            ; ryohei
+                        ; columnName = WITHDRAWAL_REASON_CODE
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 退会理由コード！3文字で示すのだ。
+                                ; databaseComment = null
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; ryohei
+                                }
+                                ; pieceCode = 2a1d2270
+                                ; pieceOwner = ryohei
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-29T17:32:55.296
+                                ; previousPieceList = list:{
+                                    ; 34592a23
+                                }
+                            }
                         }
-                        ; pieceCode = 339d5b82
-                        ; pieceOwner = ryohei
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-29T17:33:39.977
-                        ; previousPieceList = list:{
-                            ; 36b237b9
+                    }
+                    ; map:{
+                        ; columnName = WITHDRAWAL_REASON_TEXT
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 退会理由の内容。
+テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。
+それをきれいに見せるのがデザイナーの腕の見せ所ですね。。。。。
+
+コンフリクトを解消しました
+                                ; databaseComment = 退会理由の内容。
+テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                                ; pieceCode = 45c3e9dc
+                                ; pieceOwner = tominaga
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-29T19:00:59.799
+                                ; previousPieceList = list:{
+                                    ; 6a6e2f98
+                                    ; 52fd85c9
+                                    ; 929de3c
+                                }
+                            }
                         }
                     }
                 }
-                ; columnList = list:{}
             }
             ; map:{
                 ; tableName = PRODUCT
@@ -424,6 +365,29 @@ http://dbflute.seasar.org/ja/tutorial/handson/section03.html
                 }
             }
             ; map:{
+                ; tableName = MEMBER_SECURITY
+                ; mappingList = list:{}
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。
+                        ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;で、会員一人につき必ず一つのセキュリティ情報がある
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; ryohei
+                        }
+                        ; pieceCode = 339d5b82
+                        ; pieceOwner = ryohei
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-29T17:33:39.977
+                        ; previousPieceList = list:{
+                            ; 36b237b9
+                        }
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
                 ; tableName = PRODUCT_CATEGORY
                 ; mappingList = list:{}
                 ; propertyList = list:{
@@ -449,7 +413,65 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                         }
                     }
                 }
-                ; columnList = list:{}
+                ; columnList = list:{
+                    ; map:{
+                        ; columnName = PRODUCT_CATEGORY_NAME
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 編集2
+                                ; databaseComment = null
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = 42f2cdd5
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-05-01T17:27:49.061
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = PRODUCT_CATEGORY_CODE
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 編集1
+                                ; databaseComment = 自分のテーブルの別のレコードからも参照される。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = a70dd873
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-05-01T17:27:42.446
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = PARENT_CATEGORY_CODE
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 編集3
+                                ; databaseComment = 最上位の場合はデータなし。まさひく自己参照FKカラム！
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = 1b83a086
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-05-01T17:27:54.049
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
+                }
             }
             ; map:{
                 ; tableName = MEMBER_WITHDRAWAL
@@ -479,6 +501,30 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                         ; pieceDatetime = 2017-12-30T13:52:21.775
                         ; previousPieceList = list:{
                             ; 3c34cdbd
+                        }
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
+                ; tableName = MEMBER_LOGIN
+                ; mappingList = list:{}
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = コンフリクト解消
+                        ; databaseComment = ログインするたびに登録されるログイン履歴。
+登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; jflute
+                            ; yuto
+                        }
+                        ; pieceCode = a09fcdc1
+                        ; pieceOwner = yuto
+                        ; pieceGitBranch = master
+                        ; pieceDatetime = 2018-05-01T17:24:28.287
+                        ; previousPieceList = list:{
+                            ; 260b4936
                         }
                     }
                 }
@@ -612,26 +658,45 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                             }
                         }
                     }
+                    ; map:{
+                        ; columnName = MEMBER_ADDRESS_ID
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 修正5
+                                ; databaseComment = 会員住所を識別するID。
+期間ごとに同じ会員のデータを保持することがあるため、これは単なるPKであってFKではない。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = 5dca9f77
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-05-01T17:33:37.511
+                                ; previousPieceList = list:{
+                                    ; 8e7ccdf9
+                                }
+                            }
+                        }
+                    }
                 }
             }
             ; map:{
-                ; tableName = MEMBER_LOGIN
+                ; tableName = MEMBER_FOLLOWING
                 ; mappingList = list:{}
                 ; propertyList = list:{
                     ; map:{
-                        ; decomment = ログインするたびに登録されるログイン履歴。
-登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
-★ちょっとこのテーブル、デコメントした上でデータベースコメントも修正しちゃって、コンフリクトさせよう。
-                        ; databaseComment = ログインするたびに登録されるログイン履歴。
-登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
+                        ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。
+                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; jflute
                         }
-                        ; pieceCode = 260b4936
+                        ; pieceCode = 1cde89d9
                         ; pieceOwner = jflute
                         ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-29T17:00:14.044
+                        ; pieceDatetime = 2017-12-29T16:57:34.667
                         ; previousPieceList = list:{}
                     }
                 }
@@ -697,6 +762,28 @@ author が被らないことの
                         }
                     }
                     ; map:{
+                        ; columnName = MEMBER_ACCOUNT
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 不穏なことをいってるんじゃぁないよ！！
+                                ; databaseComment = ログインIDとして利用する。
+昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = 8e28669c
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-05-01T17:31:09.232
+                                ; previousPieceList = list:{
+                                    ; a273b0e8
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
                         ; columnName = MEMBER_ID
                         ; mappingList = list:{}
                         ; propertyList = list:{
@@ -723,35 +810,6 @@ decomment \;
                         }
                     }
                     ; map:{
-                        ; columnName = MEMBER_ACCOUNT
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = ログインIDとして利用する。
-昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
-
-おかしいなぁ
-
-おかしいなぁ
-
-おかしいなぁ...
-                                ; databaseComment = ログインIDとして利用する。
-昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; yuto
-                                }
-                                ; pieceCode = a273b0e8
-                                ; pieceOwner = yuto
-                                ; pieceGitBranch = null
-                                ; pieceDatetime = 2017-12-30T21:00:23.151
-                                ; previousPieceList = list:{
-                                    ; 9936ba71
-                                }
-                            }
-                        }
-                    }
-                    ; map:{
                         ; columnName = BIRTHDATE
                         ; mappingList = list:{}
                         ; propertyList = list:{
@@ -771,27 +829,30 @@ decomment \;
                             }
                         }
                     }
-                }
-            }
-            ; map:{
-                ; tableName = MEMBER_FOLLOWING
-                ; mappingList = list:{}
-                ; propertyList = list:{
                     ; map:{
-                        ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。
-                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; jflute
+                        ; columnName = VERSION_NO
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = データのバージョンを示すナンバー。
+更新回数と等しく、主に排他制御のために利用される。
+
+変な感じにならないでよね
+                                ; databaseComment = データのバージョンを示すナンバー。
+更新回数と等しく、主に排他制御のために利用される。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = f9fa03e6
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-04-30T23:49:26.555
+                                ; previousPieceList = list:{}
+                            }
                         }
-                        ; pieceCode = 1cde89d9
-                        ; pieceOwner = jflute
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-29T16:57:34.667
-                        ; previousPieceList = list:{}
                     }
                 }
-                ; columnList = list:{}
             }
         }
     }

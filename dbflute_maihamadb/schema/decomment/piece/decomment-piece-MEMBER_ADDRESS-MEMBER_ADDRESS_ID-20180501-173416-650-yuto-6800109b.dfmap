@@ -1,0 +1,20 @@
+map:{
+    ; formatVersion = 1.1
+    ; tableName = OLD_MEMBER_ADDRESS
+    ; columnName = OLD_MEMBER_ADDRESS_ID
+    ; targetType = COLUMN
+    ; decomment = 修正6
+    ; databaseComment = 会員住所を識別するID。
+期間ごとに同じ会員のデータを保持することがあるため、これは単なるPKであってFKではない。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; yuto
+    }
+    ; pieceCode = 6800109b
+    ; pieceDatetime = 2018-05-01T17:34:16.650
+    ; pieceOwner = yuto
+    ; pieceGitBranch = master
+    ; previousPieceList = list:{
+        ; 5dca9f77
+    }
+}

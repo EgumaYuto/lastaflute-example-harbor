@@ -1,0 +1,15 @@
+map:{
+    ; formatVersion = 1.0
+    ; oldTableName = OLD_MEMBER_ADDRESS
+    ; oldColumnName = null
+    ; newTableName = REGION
+    ; newColumnName = null
+    ; targetType = TABLE
+    ; authorList = list:{
+        ; yuto
+    }
+    ; mappingCode = d35ec6da
+    ; mappingOwner = yuto
+    ; mappingDatetime = 2018-05-01T17:55:42.809
+    ; previousMappingList = list:{}
+}
