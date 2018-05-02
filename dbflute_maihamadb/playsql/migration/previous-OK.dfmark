@@ -1,0 +1,16 @@
+[Saved Previous Resources]: 2018/05/02 19:39:04
+playsql/migration/previous/replace-schema-10-basic.sql
+playsql/migration/previous/replace-schema-80-comment.sql
+playsql/migration/previous/take-finally.sql
+playsql/migration/previous/data/ut/reversexls/cyclic-data-01-MEMBER-plus.xls
+playsql/migration/previous/data/ut/reversexls/loadingControlMap.dataprop
+playsql/migration/previous/data/ut/reversexls/cyclic-data-02-PURCHASE.xls
+playsql/migration/previous/data/ut/reversexls/defaultValueMap.dataprop
+playsql/migration/previous/data/ut/reversexls/xls-data-result.dfmark
+playsql/migration/previous/data/ut/reversexls/reverse-data-result.dfmark
+playsql/migration/previous/data/ut/reversexls/.gitignore
+playsql/migration/previous/data/common/xls/xls-data-result.dfmark
+playsql/migration/previous/data/common/xls/10-master.xls
+(12 files)
+
+Look at the log for detail.
