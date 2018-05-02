@@ -1,0 +1,29 @@
+map:{
+    ; formatVersion = 1.1
+    ; tableName = MEMBER_ADDRESS
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &amp\;quot\;1 : 0..1&amp\;quot\; である。
+かぼすはかぼさない。いやかぼす♪。💕
+
+いけるんですね〜 by かぼす
+
+かぼマッピングのテストの環境ができあがってからのデコメントだよー。
+    ; databaseComment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+会員を基点に考えた場合、構造的には&nbsp\;one-to-many&nbsp\;だが、業務的な定型条件で&nbsp\;one-to-one&nbsp\;になる。このような構造を「業務的one-to-one」と呼ぶ！
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp\;"1&nbsp\;:&nbsp\;0..1"&nbsp\;である。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; jflute
+        ; yuto
+    }
+    ; pieceCode = 6b05a6d1
+    ; pieceDatetime = 2018-05-02T20:36:38.721
+    ; pieceOwner = jflute
+    ; pieceGitBranch = master
+    ; previousPieceList = list:{
+        ; e7633359
+    }
+}
