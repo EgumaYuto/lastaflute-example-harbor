@@ -350,7 +350,7 @@ dl.procedurelist dd.column pre {
 		<thead id="unmapped-table-head">
 		<tr>
 			<th>No</th>
-			<th>Name</th>
+			<th>Table Name</th>
 			<th class="conflictcell">Conflict Mapping Name</th>
 			<th>Mapping</th>
 		</tr>
@@ -3942,74 +3942,6 @@ function StoreClient() {
 	this.embeddedPickup = {
 		'tables': [
 			{
-				'tableName': 'MEMBER_STATUS'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
-						, 'databaseComment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga']
-						, 'pieceCode': '1d1af0e7'
-						, 'pieceDatatime': '2017-12-29T18:48:35.348'
-						, 'previousPieces': []
-					}
-				]
-				, 'columns': [
-				]
-			}
-			, {
-				'tableName': 'MEMBER_SERVICE'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。<br><br>小文字に変更されないかテストをする<br>そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27;<br>というか絵文字は？💖'
-						, 'databaseComment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga','jflute']
-						, 'pieceCode': '767ffa1f'
-						, 'pieceDatatime': '2017-12-30T13:57:43.891'
-						, 'previousPieces': ['ab95e92']
-					}
-				]
-				, 'columns': [
-					 {
-						'columnName': 'MEMBER_SERVICE_ID'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '独立した主キーとなるが、実質的に会員IDとは one-to-one である。'
-								, 'databaseComment': '独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。'
-								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': '25a8d9e5'
-								, 'pieceDatatime': '2017-12-29T17:54:35.653'
-								, 'previousPieces': []
-							}
-						]
-					}
-					, {
-						'columnName': 'SERVICE_POINT_COUNT'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '明らかにおかしいカラム名'
-								, 'databaseComment': '購入したら増えて使ったら減る。'
-								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': '4bc473be'
-								, 'pieceDatatime': '2017-12-30T13:51:58.786'
-								, 'previousPieces': []
-							}
-						]
-					}
-				]
-			}
-			, {
 				'tableName': 'WITHDRAWAL_REASON'
 				, 'mappings' : [
 				]
@@ -4073,6 +4005,92 @@ function StoreClient() {
 							}
 						]
 					}
+				]
+			}
+			, {
+				'tableName': 'MEMBER_SERVICE'
+				, 'mappings' : [
+				]
+				, 'properties': [
+						{
+						'decomment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。<br><br>小文字に変更されないかテストをする<br>そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27;<br>というか絵文字は？💖'
+						, 'databaseComment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga','jflute']
+						, 'pieceCode': '767ffa1f'
+						, 'pieceDatatime': '2017-12-30T13:57:43.891'
+						, 'previousPieces': ['ab95e92']
+					}
+				]
+				, 'columns': [
+					 {
+						'columnName': 'MEMBER_SERVICE_ID'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '独立した主キーとなるが、実質的に会員IDとは one-to-one である。'
+								, 'databaseComment': '独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': '25a8d9e5'
+								, 'pieceDatatime': '2017-12-29T17:54:35.653'
+								, 'previousPieces': []
+							}
+						]
+					}
+					, {
+						'columnName': 'SERVICE_POINT_COUNT'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '明らかにおかしいカラム名'
+								, 'databaseComment': '購入したら増えて使ったら減る。'
+								, 'commentVersion': 0
+								, 'authors': ['yuto']
+								, 'pieceCode': '4bc473be'
+								, 'pieceDatatime': '2017-12-30T13:51:58.786'
+								, 'previousPieces': []
+							}
+						]
+					}
+				]
+			}
+			, {
+				'tableName': 'MEMBER_STATUS'
+				, 'mappings' : [
+				]
+				, 'properties': [
+						{
+						'decomment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
+						, 'databaseComment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': '1d1af0e7'
+						, 'pieceDatatime': '2017-12-29T18:48:35.348'
+						, 'previousPieces': []
+					}
+				]
+				, 'columns': [
+				]
+			}
+			, {
+				'tableName': 'MEMBER_SECURITY'
+				, 'mappings' : [
+				]
+				, 'properties': [
+						{
+						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。<br>@Yahoo! lodge'
+						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga','ryohei']
+						, 'pieceCode': '4c2e609a'
+						, 'pieceDatatime': '2018-05-04T13:54:56.043'
+						, 'previousPieces': ['339d5b82']
+					}
+				]
+				, 'columns': [
 				]
 			}
 			, {
@@ -4172,22 +4190,6 @@ function StoreClient() {
 						]
 					}
 					, {
-						'columnName': 'REGISTER_USER'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': 'select * from price where register_user = &#x27;deco&#x27;;'
-								, 'databaseComment': ''
-								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': 'e322a9a9'
-								, 'pieceDatatime': '2018-05-04T13:46:26.379'
-								, 'previousPieces': []
-							}
-						]
-					}
-					, {
 						'columnName': 'PRODUCT_STATUS_CODE'
 						, 'mappings' : [
 						]
@@ -4203,24 +4205,22 @@ function StoreClient() {
 							}
 						]
 					}
-				]
-			}
-			, {
-				'tableName': 'MEMBER_SECURITY'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。<br>@Yahoo! lodge'
-						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga','ryohei']
-						, 'pieceCode': '4c2e609a'
-						, 'pieceDatatime': '2018-05-04T13:54:56.043'
-						, 'previousPieces': ['339d5b82']
+					, {
+						'columnName': 'REGISTER_USER'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': 'select * from price where register_user = &#x27;deco&#x27;;'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': 'e322a9a9'
+								, 'pieceDatatime': '2018-05-04T13:46:26.379'
+								, 'previousPieces': []
+							}
+						]
 					}
-				]
-				, 'columns': [
 				]
 			}
 			, {
@@ -4256,22 +4256,6 @@ function StoreClient() {
 						]
 					}
 					, {
-						'columnName': 'PRODUCT_CATEGORY_CODE'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '編集1'
-								, 'databaseComment': '自分のテーブルの別のレコードからも参照される。'
-								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': 'a70dd873'
-								, 'pieceDatatime': '2018-05-01T17:27:42.446'
-								, 'previousPieces': []
-							}
-						]
-					}
-					, {
 						'columnName': 'PARENT_CATEGORY_CODE'
 						, 'mappings' : [
 						]
@@ -4283,6 +4267,22 @@ function StoreClient() {
 								, 'authors': ['yuto']
 								, 'pieceCode': '1b83a086'
 								, 'pieceDatatime': '2018-05-01T17:27:54.049'
+								, 'previousPieces': []
+							}
+						]
+					}
+					, {
+						'columnName': 'PRODUCT_CATEGORY_CODE'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '編集1'
+								, 'databaseComment': '自分のテーブルの別のレコードからも参照される。'
+								, 'commentVersion': 0
+								, 'authors': ['yuto']
+								, 'pieceCode': 'a70dd873'
+								, 'pieceDatatime': '2018-05-01T17:27:42.446'
 								, 'previousPieces': []
 							}
 						]
@@ -4302,6 +4302,24 @@ function StoreClient() {
 						, 'pieceCode': 'f9bd326'
 						, 'pieceDatatime': '2017-12-30T13:52:21.775'
 						, 'previousPieces': ['3c34cdbd']
+					}
+				]
+				, 'columns': [
+				]
+			}
+			, {
+				'tableName': 'MEMBER_LOGIN'
+				, 'mappings' : [
+				]
+				, 'properties': [
+						{
+						'decomment': 'コンフリクト解消'
+						, 'databaseComment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。'
+						, 'commentVersion': 0
+						, 'authors': ['jflute','yuto']
+						, 'pieceCode': 'a09fcdc1'
+						, 'pieceDatatime': '2018-05-01T17:24:28.287'
+						, 'previousPieces': ['260b4936']
 					}
 				]
 				, 'columns': [
@@ -4413,43 +4431,59 @@ function StoreClient() {
 				]
 			}
 			, {
-				'tableName': 'MEMBER_LOGIN'
+				'tableName': 'MEMBER_FOLLOWING'
 				, 'mappings' : [
 				]
 				, 'properties': [
 						{
-						'decomment': 'コンフリクト解消'
-						, 'databaseComment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。'
+						'decomment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。'
+						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
 						, 'commentVersion': 0
-						, 'authors': ['jflute','yuto']
-						, 'pieceCode': 'a09fcdc1'
-						, 'pieceDatatime': '2018-05-01T17:24:28.287'
-						, 'previousPieces': ['260b4936']
+						, 'authors': ['jflute']
+						, 'pieceCode': '1cde89d9'
+						, 'pieceDatatime': '2017-12-29T16:57:34.667'
+						, 'previousPieces': []
 					}
 				]
 				, 'columns': [
+					 {
+						'columnName': 'MEMBER_FOLLOWING_ID'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '連番'
+								, 'databaseComment': '連番'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': '1696e231'
+								, 'pieceDatatime': '2018-05-04T13:59:52.758'
+								, 'previousPieces': []
+							}
+						]
+					}
 				]
 			}
 			, {
-				'tableName': 'PURCHASE'
+				'tableName': 'REGION'
 				, 'mappings' : [
 				]
 				, 'properties': [
 				]
 				, 'columns': [
 					 {
-						'columnName': 'PURCHASE_ID'
+						'columnName': 'REGION_ID'
 						, 'mappings' : [
 						]
 						, 'properties': [
 								 {
-								'decomment': 'エスケープで死にそうな文字をたくさん入力<br>!@#$%^&amp;*()_+-=\][{}|&#x27;;:&quot;?.,&lt;&gt;?'
-								, 'databaseComment': ''
+								'decomment': '修正6'
+								, 'databaseComment': '会員住所を識別するID。<br>期間ごとに同じ会員のデータを保持することがあるため、これは単なるPKであってFKではない。'
 								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': 'e1b3902b'
-								, 'pieceDatatime': '2018-05-04T13:47:18.027'
-								, 'previousPieces': []
+								, 'authors': ['yuto']
+								, 'pieceCode': '6800109b'
+								, 'pieceDatatime': '2018-05-01T17:34:16.650'
+								, 'previousPieces': ['5dca9f77']
 							}
 						]
 					}
@@ -4504,22 +4538,6 @@ function StoreClient() {
 						]
 					}
 					, {
-						'columnName': 'MEMBER_ACCOUNT'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '不穏なことをいってるんじゃぁないよ！！'
-								, 'databaseComment': 'ログインIDとして利用する。<br>昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?'
-								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': '8e28669c'
-								, 'pieceDatatime': '2018-05-01T17:31:09.232'
-								, 'previousPieces': ['a273b0e8']
-							}
-						]
-					}
-					, {
 						'columnName': 'MEMBER_ID'
 						, 'mappings' : [
 						]
@@ -4536,18 +4554,18 @@ function StoreClient() {
 						]
 					}
 					, {
-						'columnName': 'BIRTHDATE'
+						'columnName': 'MEMBER_ACCOUNT'
 						, 'mappings' : [
 						]
 						, 'properties': [
 								 {
-								'decomment': '必須項目ではないので、このデータがない会員もいる。<br>生年月日スーパーマン！私は生まれたら空を飛ぶ、とりゃー！'
-								, 'databaseComment': '必須項目ではないので、このデータがない会員もいる。'
+								'decomment': '不穏なことをいってるんじゃぁないよ！！'
+								, 'databaseComment': 'ログインIDとして利用する。<br>昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?'
 								, 'commentVersion': 0
-								, 'authors': ['jflute']
-								, 'pieceCode': '1e333dc5'
-								, 'pieceDatatime': '2017-12-24T23:18:33.111'
-								, 'previousPieces': []
+								, 'authors': ['yuto']
+								, 'pieceCode': '8e28669c'
+								, 'pieceDatatime': '2018-05-01T17:31:09.232'
+								, 'previousPieces': ['a273b0e8']
 							}
 						]
 					}
@@ -4567,61 +4585,43 @@ function StoreClient() {
 							}
 						]
 					}
-				]
-			}
-			, {
-				'tableName': 'REGION'
-				, 'mappings' : [
-				]
-				, 'properties': [
-				]
-				, 'columns': [
-					 {
-						'columnName': 'REGION_ID'
+					, {
+						'columnName': 'BIRTHDATE'
 						, 'mappings' : [
 						]
 						, 'properties': [
 								 {
-								'decomment': '修正6'
-								, 'databaseComment': '会員住所を識別するID。<br>期間ごとに同じ会員のデータを保持することがあるため、これは単なるPKであってFKではない。'
+								'decomment': '必須項目ではないので、このデータがない会員もいる。<br>生年月日スーパーマン！私は生まれたら空を飛ぶ、とりゃー！'
+								, 'databaseComment': '必須項目ではないので、このデータがない会員もいる。'
 								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': '6800109b'
-								, 'pieceDatatime': '2018-05-01T17:34:16.650'
-								, 'previousPieces': ['5dca9f77']
+								, 'authors': ['jflute']
+								, 'pieceCode': '1e333dc5'
+								, 'pieceDatatime': '2017-12-24T23:18:33.111'
+								, 'previousPieces': []
 							}
 						]
 					}
 				]
 			}
 			, {
-				'tableName': 'MEMBER_FOLLOWING'
+				'tableName': 'PURCHASE'
 				, 'mappings' : [
 				]
 				, 'properties': [
-						{
-						'decomment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。'
-						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
-						, 'commentVersion': 0
-						, 'authors': ['jflute']
-						, 'pieceCode': '1cde89d9'
-						, 'pieceDatatime': '2017-12-29T16:57:34.667'
-						, 'previousPieces': []
-					}
 				]
 				, 'columns': [
 					 {
-						'columnName': 'MEMBER_FOLLOWING_ID2'
+						'columnName': 'PURCHASE_ID'
 						, 'mappings' : [
 						]
 						, 'properties': [
 								 {
-								'decomment': '連番'
-								, 'databaseComment': '連番'
+								'decomment': 'エスケープで死にそうな文字をたくさん入力<br>!@#$%^&amp;*()_+-=\][{}|&#x27;;:&quot;?.,&lt;&gt;?'
+								, 'databaseComment': ''
 								, 'commentVersion': 0
 								, 'authors': ['tominaga']
-								, 'pieceCode': '1696e231'
-								, 'pieceDatatime': '2018-05-04T13:59:52.758'
+								, 'pieceCode': 'e1b3902b'
+								, 'pieceDatatime': '2018-05-04T13:47:18.027'
 								, 'previousPieces': []
 							}
 						]
@@ -6034,18 +6034,13 @@ UnmappedColumnArea.prototype = {
 	 * @returns {array} column name list
 	 */
 	getColumnNameList: function (tableName) {
-		var storeClient = new StoreClient();
-		var table = storeClient.pickupStore[tableName];
-		if (!table) {
-			return [];
+		var trs = document.getElementById(tableName.toLowerCase() + '-body').getElementsByTagName('tr');
+		var columnList = [];
+		for (var i = 0, max = trs.length; i < max; i++) {
+			// TODO check that column name column num is 6
+			columnList.push(trs[i].getElementsByTagName('td')[6].innerText);
 		}
-		var columnNameList = [];
-		if (table.columns) {
-			for (var name in table.columns) {
-				columnNameList.push(name);
-			}
-		}
-		return columnNameList;
+		return columnList;
 	},
 
 	/**

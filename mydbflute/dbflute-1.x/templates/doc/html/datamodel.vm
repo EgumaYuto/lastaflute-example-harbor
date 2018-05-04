@@ -420,7 +420,7 @@ ${linkDelimiter} <a href="${selector.getNeighborhoodSchemaHtmlPath($schemaHtmlKe
 		<thead id="unmapped-table-head">
 		<tr>
 			<th>No</th>
-			<th>Name</th>
+			<th>Table Name</th>
 			<th class="conflictcell">Conflict Mapping Name</th>
 			<th>Mapping</th>
 		</tr>
@@ -2304,18 +2304,13 @@ UnmappedColumnArea.prototype = {
 	 * @returns {array} column name list
 	 */
 	getColumnNameList: function (tableName) {
-		var storeClient = new StoreClient();
-		var table = storeClient.pickupStore[tableName];
-		if (!table) {
-			return [];
+		var trs = document.getElementById(tableName.toLowerCase() + '-body').getElementsByTagName('tr');
+		var columnList = [];
+		for (var i = 0, max = trs.length; i < max; i++) {
+			// TODO check that column name column num is 6
+			columnList.push(trs[i].getElementsByTagName('td')[6].innerText);
 		}
-		var columnNameList = [];
-		if (table.columns) {
-			for (var name in table.columns) {
-				columnNameList.push(name);
-			}
-		}
-		return columnNameList;
+		return columnList;
 	},
 
 	/**
