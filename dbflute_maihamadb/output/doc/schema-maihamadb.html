@@ -3942,6 +3942,74 @@ function StoreClient() {
 	this.embeddedPickup = {
 		'tables': [
 			{
+				'tableName': 'MEMBER_STATUS'
+				, 'mappings' : [
+				]
+				, 'properties': [
+						{
+						'decomment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
+						, 'databaseComment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': '1d1af0e7'
+						, 'pieceDatatime': '2017-12-29T18:48:35.348'
+						, 'previousPieces': []
+					}
+				]
+				, 'columns': [
+				]
+			}
+			, {
+				'tableName': 'MEMBER_SERVICE'
+				, 'mappings' : [
+				]
+				, 'properties': [
+						{
+						'decomment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。<br><br>小文字に変更されないかテストをする<br>そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27;<br>というか絵文字は？💖'
+						, 'databaseComment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga','jflute']
+						, 'pieceCode': '767ffa1f'
+						, 'pieceDatatime': '2017-12-30T13:57:43.891'
+						, 'previousPieces': ['ab95e92']
+					}
+				]
+				, 'columns': [
+					 {
+						'columnName': 'MEMBER_SERVICE_ID'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '独立した主キーとなるが、実質的に会員IDとは one-to-one である。'
+								, 'databaseComment': '独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': '25a8d9e5'
+								, 'pieceDatatime': '2017-12-29T17:54:35.653'
+								, 'previousPieces': []
+							}
+						]
+					}
+					, {
+						'columnName': 'SERVICE_POINT_COUNT'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '明らかにおかしいカラム名'
+								, 'databaseComment': '購入したら増えて使ったら減る。'
+								, 'commentVersion': 0
+								, 'authors': ['yuto']
+								, 'pieceCode': '4bc473be'
+								, 'pieceDatatime': '2017-12-30T13:51:58.786'
+								, 'previousPieces': []
+							}
+						]
+					}
+				]
+			}
+			, {
 				'tableName': 'WITHDRAWAL_REASON'
 				, 'mappings' : [
 				]
@@ -4005,92 +4073,6 @@ function StoreClient() {
 							}
 						]
 					}
-				]
-			}
-			, {
-				'tableName': 'MEMBER_SERVICE'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。<br><br>小文字に変更されないかテストをする<br>そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27;<br>というか絵文字は？💖'
-						, 'databaseComment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga','jflute']
-						, 'pieceCode': '767ffa1f'
-						, 'pieceDatatime': '2017-12-30T13:57:43.891'
-						, 'previousPieces': ['ab95e92']
-					}
-				]
-				, 'columns': [
-					 {
-						'columnName': 'MEMBER_SERVICE_ID'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '独立した主キーとなるが、実質的に会員IDとは one-to-one である。'
-								, 'databaseComment': '独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。'
-								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': '25a8d9e5'
-								, 'pieceDatatime': '2017-12-29T17:54:35.653'
-								, 'previousPieces': []
-							}
-						]
-					}
-					, {
-						'columnName': 'SERVICE_POINT_COUNT'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '明らかにおかしいカラム名'
-								, 'databaseComment': '購入したら増えて使ったら減る。'
-								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': '4bc473be'
-								, 'pieceDatatime': '2017-12-30T13:51:58.786'
-								, 'previousPieces': []
-							}
-						]
-					}
-				]
-			}
-			, {
-				'tableName': 'MEMBER_STATUS'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
-						, 'databaseComment': '会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga']
-						, 'pieceCode': '1d1af0e7'
-						, 'pieceDatatime': '2017-12-29T18:48:35.348'
-						, 'previousPieces': []
-					}
-				]
-				, 'columns': [
-				]
-			}
-			, {
-				'tableName': 'MEMBER_SECURITY'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。'
-						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga','ryohei']
-						, 'pieceCode': '339d5b82'
-						, 'pieceDatatime': '2017-12-29T17:33:39.977'
-						, 'previousPieces': ['36b237b9']
-					}
-				]
-				, 'columns': [
 				]
 			}
 			, {
@@ -4190,6 +4172,22 @@ function StoreClient() {
 						]
 					}
 					, {
+						'columnName': 'REGISTER_USER'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': 'select * from price where register_user = &#x27;deco&#x27;;'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': 'e322a9a9'
+								, 'pieceDatatime': '2018-05-04T13:46:26.379'
+								, 'previousPieces': []
+							}
+						]
+					}
+					, {
 						'columnName': 'PRODUCT_STATUS_CODE'
 						, 'mappings' : [
 						]
@@ -4205,6 +4203,24 @@ function StoreClient() {
 							}
 						]
 					}
+				]
+			}
+			, {
+				'tableName': 'MEMBER_SECURITY'
+				, 'mappings' : [
+				]
+				, 'properties': [
+						{
+						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。<br>@Yahoo! lodge'
+						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga','ryohei']
+						, 'pieceCode': '4c2e609a'
+						, 'pieceDatatime': '2018-05-04T13:54:56.043'
+						, 'previousPieces': ['339d5b82']
+					}
+				]
+				, 'columns': [
 				]
 			}
 			, {
@@ -4240,22 +4256,6 @@ function StoreClient() {
 						]
 					}
 					, {
-						'columnName': 'PARENT_CATEGORY_CODE'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '編集3'
-								, 'databaseComment': '最上位の場合はデータなし。まさひく自己参照FKカラム！'
-								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': '1b83a086'
-								, 'pieceDatatime': '2018-05-01T17:27:54.049'
-								, 'previousPieces': []
-							}
-						]
-					}
-					, {
 						'columnName': 'PRODUCT_CATEGORY_CODE'
 						, 'mappings' : [
 						]
@@ -4267,6 +4267,22 @@ function StoreClient() {
 								, 'authors': ['yuto']
 								, 'pieceCode': 'a70dd873'
 								, 'pieceDatatime': '2018-05-01T17:27:42.446'
+								, 'previousPieces': []
+							}
+						]
+					}
+					, {
+						'columnName': 'PARENT_CATEGORY_CODE'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '編集3'
+								, 'databaseComment': '最上位の場合はデータなし。まさひく自己参照FKカラム！'
+								, 'commentVersion': 0
+								, 'authors': ['yuto']
+								, 'pieceCode': '1b83a086'
+								, 'pieceDatatime': '2018-05-01T17:27:54.049'
 								, 'previousPieces': []
 							}
 						]
@@ -4415,6 +4431,145 @@ function StoreClient() {
 				]
 			}
 			, {
+				'tableName': 'PURCHASE'
+				, 'mappings' : [
+				]
+				, 'properties': [
+				]
+				, 'columns': [
+					 {
+						'columnName': 'PURCHASE_ID'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': 'エスケープで死にそうな文字をたくさん入力<br>!@#$%^&amp;*()_+-=\][{}|&#x27;;:&quot;?.,&lt;&gt;?'
+								, 'databaseComment': ''
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': 'e1b3902b'
+								, 'pieceDatatime': '2018-05-04T13:47:18.027'
+								, 'previousPieces': []
+							}
+						]
+					}
+				]
+			}
+			, {
+				'tableName': 'MEMBER'
+				, 'mappings' : [
+				]
+				, 'properties': [
+						{
+						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br>あれ？ author に複数人入っている piece が存在する気が...<br><br>おかしい...<br><br>author が被らないことの<br><br>最終確認<br><br>ほげほげ<br>ver002fd<br>fda'
+						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
+						, 'commentVersion': 0
+						, 'authors': ['yuto','tominaga','jflute','ryohei']
+						, 'pieceCode': '4ee1c6c8'
+						, 'pieceDatatime': '2018-05-04T13:44:55.646'
+						, 'previousPieces': ['9cc19f34']
+					}
+				]
+				, 'columns': [
+					 {
+						'columnName': 'MEMBER_NAME'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純は単純にでひとまとめ。<br>&lt;br&gt;によるDBコメントとのコンフリクトを直した。'
+								, 'databaseComment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。'
+								, 'commentVersion': 0
+								, 'authors': ['jflute']
+								, 'pieceCode': '32ca67b5'
+								, 'pieceDatatime': '2017-12-24T23:17:41.230'
+								, 'previousPieces': ['28e001f']
+							}
+						]
+					}
+					, {
+						'columnName': 'UPDATE_USER'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': 'データを更新したユーザ名'
+								, 'databaseComment': 'レコードを更新したユーザ。<br>システムは誰が何をしたのかちゃんと覚えているのさ。'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': 'b61783cd'
+								, 'pieceDatatime': '2018-05-04T13:45:16.345'
+								, 'previousPieces': ['b19e4228']
+							}
+						]
+					}
+					, {
+						'columnName': 'MEMBER_ACCOUNT'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '不穏なことをいってるんじゃぁないよ！！'
+								, 'databaseComment': 'ログインIDとして利用する。<br>昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?'
+								, 'commentVersion': 0
+								, 'authors': ['yuto']
+								, 'pieceCode': '8e28669c'
+								, 'pieceDatatime': '2018-05-01T17:31:09.232'
+								, 'previousPieces': ['a273b0e8']
+							}
+						]
+					}
+					, {
+						'columnName': 'MEMBER_ID'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '連番として自動採番される。会員のIDだけに限らず採番方法はDBMS次第。<br>基本はMySQLが多いので問題になることはほとんどない。<br><br>decomment ;'
+								, 'databaseComment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga','ryohei','yuto']
+								, 'pieceCode': 'd941f67'
+								, 'pieceDatatime': '2017-12-30T20:55:13.110'
+								, 'previousPieces': ['fb192f28']
+							}
+						]
+					}
+					, {
+						'columnName': 'BIRTHDATE'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '必須項目ではないので、このデータがない会員もいる。<br>生年月日スーパーマン！私は生まれたら空を飛ぶ、とりゃー！'
+								, 'databaseComment': '必須項目ではないので、このデータがない会員もいる。'
+								, 'commentVersion': 0
+								, 'authors': ['jflute']
+								, 'pieceCode': '1e333dc5'
+								, 'pieceDatatime': '2017-12-24T23:18:33.111'
+								, 'previousPieces': []
+							}
+						]
+					}
+					, {
+						'columnName': 'VERSION_NO'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': 'データのバージョンを示すナンバー。<br>更新回数と等しく、主に排他制御のために利用される。<br><br>変な感じにならないでよね'
+								, 'databaseComment': 'データのバージョンを示すナンバー。<br>更新回数と等しく、主に排他制御のために利用される。'
+								, 'commentVersion': 0
+								, 'authors': ['yuto']
+								, 'pieceCode': 'f9fa03e6'
+								, 'pieceDatatime': '2018-04-30T23:49:26.555'
+								, 'previousPieces': []
+							}
+						]
+					}
+				]
+			}
+			, {
 				'tableName': 'REGION'
 				, 'mappings' : [
 				]
@@ -4440,113 +4595,6 @@ function StoreClient() {
 				]
 			}
 			, {
-				'tableName': 'MEMBER'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br>あれ？ author に複数人入っている piece が存在する気が...<br><br>おかしい...<br><br>author が被らないことの<br><br>最終確認<br><br>ほげほげ<br>ver002'
-						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
-						, 'commentVersion': 0
-						, 'authors': ['yuto','tominaga','jflute','ryohei']
-						, 'pieceCode': 'e9ca230f'
-						, 'pieceDatatime': '2018-05-04T13:38:57.312'
-						, 'previousPieces': ['4d94b80c']
-					}
-						, {
-						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br><br>あれ？ author に複数人入っている piece が存在する気が...<br><br>おかしい...<br><br>author が被らないことの<br><br>最終確認<br><br>ver001'
-						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
-						, 'commentVersion': 0
-						, 'authors': ['yuto','tominaga','jflute','ryohei']
-						, 'pieceCode': '1aaae42f'
-						, 'pieceDatatime': '2018-05-04T13:38:51.549'
-						, 'previousPieces': ['4d94b80c']
-					}
-				]
-				, 'columns': [
-					 {
-						'columnName': 'MEMBER_NAME'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純は単純にでひとまとめ。<br>&lt;br&gt;によるDBコメントとのコンフリクトを直した。'
-								, 'databaseComment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。'
-								, 'commentVersion': 0
-								, 'authors': ['jflute']
-								, 'pieceCode': '32ca67b5'
-								, 'pieceDatatime': '2017-12-24T23:17:41.230'
-								, 'previousPieces': ['28e001f']
-							}
-						]
-					}
-					, {
-						'columnName': 'MEMBER_ID'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '連番として自動採番される。会員のIDだけに限らず採番方法はDBMS次第。<br>基本はMySQLが多いので問題になることはほとんどない。<br><br>decomment ;'
-								, 'databaseComment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。'
-								, 'commentVersion': 0
-								, 'authors': ['tominaga','ryohei','yuto']
-								, 'pieceCode': 'd941f67'
-								, 'pieceDatatime': '2017-12-30T20:55:13.110'
-								, 'previousPieces': ['fb192f28']
-							}
-						]
-					}
-					, {
-						'columnName': 'MEMBER_ACCOUNT'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '不穏なことをいってるんじゃぁないよ！！'
-								, 'databaseComment': 'ログインIDとして利用する。<br>昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?'
-								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': '8e28669c'
-								, 'pieceDatatime': '2018-05-01T17:31:09.232'
-								, 'previousPieces': ['a273b0e8']
-							}
-						]
-					}
-					, {
-						'columnName': 'VERSION_NO'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': 'データのバージョンを示すナンバー。<br>更新回数と等しく、主に排他制御のために利用される。<br><br>変な感じにならないでよね'
-								, 'databaseComment': 'データのバージョンを示すナンバー。<br>更新回数と等しく、主に排他制御のために利用される。'
-								, 'commentVersion': 0
-								, 'authors': ['yuto']
-								, 'pieceCode': 'f9fa03e6'
-								, 'pieceDatatime': '2018-04-30T23:49:26.555'
-								, 'previousPieces': []
-							}
-						]
-					}
-					, {
-						'columnName': 'BIRTHDATE'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '必須項目ではないので、このデータがない会員もいる。<br>生年月日スーパーマン！私は生まれたら空を飛ぶ、とりゃー！'
-								, 'databaseComment': '必須項目ではないので、このデータがない会員もいる。'
-								, 'commentVersion': 0
-								, 'authors': ['jflute']
-								, 'pieceCode': '1e333dc5'
-								, 'pieceDatatime': '2017-12-24T23:18:33.111'
-								, 'previousPieces': []
-							}
-						]
-					}
-				]
-			}
-			, {
 				'tableName': 'MEMBER_FOLLOWING'
 				, 'mappings' : [
 				]
@@ -4562,6 +4610,22 @@ function StoreClient() {
 					}
 				]
 				, 'columns': [
+					 {
+						'columnName': 'MEMBER_FOLLOWING_ID2'
+						, 'mappings' : [
+						]
+						, 'properties': [
+								 {
+								'decomment': '連番'
+								, 'databaseComment': '連番'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': '1696e231'
+								, 'pieceDatatime': '2018-05-04T13:59:52.758'
+								, 'previousPieces': []
+							}
+						]
+					}
 				]
 			}
 		]
