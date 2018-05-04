@@ -1,0 +1,17 @@
+map:{
+    ; formatVersion = 1.1
+    ; tableName = PRODUCT
+    ; columnName = REGISTER_USER
+    ; targetType = COLUMN
+    ; decomment = select * from price where register_user \= &#x27\;deco&#x27\;\;
+    ; databaseComment = 
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+    }
+    ; pieceCode = e322a9a9
+    ; pieceDatetime = 2018-05-04T13:46:26.379
+    ; pieceOwner = tominaga
+    ; pieceGitBranch = master
+    ; previousPieceList = list:{}
+}

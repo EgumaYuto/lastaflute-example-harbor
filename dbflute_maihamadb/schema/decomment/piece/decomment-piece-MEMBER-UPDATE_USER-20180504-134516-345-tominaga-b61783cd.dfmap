@@ -1,0 +1,20 @@
+map:{
+    ; formatVersion = 1.1
+    ; tableName = MEMBER
+    ; columnName = UPDATE_USER
+    ; targetType = COLUMN
+    ; decomment = データを更新したユーザ名
+    ; databaseComment = レコードを更新したユーザ。
+システムは誰が何をしたのかちゃんと覚えているのさ。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+    }
+    ; pieceCode = b61783cd
+    ; pieceDatetime = 2018-05-04T13:45:16.345
+    ; pieceOwner = tominaga
+    ; pieceGitBranch = master
+    ; previousPieceList = list:{
+        ; b19e4228
+    }
+}

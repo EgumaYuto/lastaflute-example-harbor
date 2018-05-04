@@ -1,0 +1,18 @@
+map:{
+    ; formatVersion = 1.1
+    ; tableName = MEMBER
+    ; columnName = UPDATE_USER
+    ; targetType = COLUMN
+    ; decomment = s
+    ; databaseComment = レコードを更新したユーザ。
+システムは誰が何をしたのかちゃんと覚えているのさ。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+    }
+    ; pieceCode = b19e4228
+    ; pieceDatetime = 2018-05-04T13:44:49.206
+    ; pieceOwner = tominaga
+    ; pieceGitBranch = master
+    ; previousPieceList = list:{}
+}

@@ -1,102 +1,8 @@
 map:{
     ; formatVersion = null
-    ; pickupDatetime = 2018-05-01T17:33:52.480
+    ; pickupDatetime = 2018-05-04T13:40:23.070
     ; decoMap = map:{
         ; tableList = list:{
-            ; map:{
-                ; tableName = MEMBER_STATUS
-                ; mappingList = list:{}
-                ; propertyList = list:{
-                    ; map:{
-                        ; decomment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
-業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
-
-こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
-                        ; databaseComment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
-業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
-
-こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; tominaga
-                        }
-                        ; pieceCode = 1d1af0e7
-                        ; pieceOwner = tominaga
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-29T18:48:35.348
-                        ; previousPieceList = list:{}
-                    }
-                }
-                ; columnList = list:{}
-            }
-            ; map:{
-                ; tableName = MEMBER_SERVICE
-                ; mappingList = list:{}
-                ; propertyList = list:{
-                    ; map:{
-                        ; decomment = 会員のサービス情報（ポイントサービスなど）。
-テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。
-
-小文字に変更されないかテストをする
-そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27\;
-というか絵文字は？💖
-                        ; databaseComment = 会員のサービス情報（ポイントサービスなど）。
-テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp\;one-to-one&nbsp\;を表現している。
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; tominaga
-                            ; jflute
-                        }
-                        ; pieceCode = 767ffa1f
-                        ; pieceOwner = jflute
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-30T13:57:43.891
-                        ; previousPieceList = list:{
-                            ; ab95e92
-                        }
-                    }
-                }
-                ; columnList = list:{
-                    ; map:{
-                        ; columnName = MEMBER_SERVICE_ID
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 独立した主キーとなるが、実質的に会員IDとは one-to-one である。
-                                ; databaseComment = 独立した主キーとなるが、実質的に会員IDとは&nbsp\;one-to-one&nbsp\;である。
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; tominaga
-                                }
-                                ; pieceCode = 25a8d9e5
-                                ; pieceOwner = tominaga
-                                ; pieceGitBranch = null
-                                ; pieceDatetime = 2017-12-29T17:54:35.653
-                                ; previousPieceList = list:{}
-                            }
-                        }
-                    }
-                    ; map:{
-                        ; columnName = SERVICE_POINT_COUNT
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 明らかにおかしいカラム名
-                                ; databaseComment = 購入したら増えて使ったら減る。
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; yuto
-                                }
-                                ; pieceCode = 4bc473be
-                                ; pieceOwner = yuto
-                                ; pieceGitBranch = null
-                                ; pieceDatetime = 2017-12-30T13:51:58.786
-                                ; previousPieceList = list:{}
-                            }
-                        }
-                    }
-                }
-            }
             ; map:{
                 ; tableName = WITHDRAWAL_REASON
                 ; mappingList = list:{}
@@ -188,6 +94,123 @@ map:{
                         }
                     }
                 }
+            }
+            ; map:{
+                ; tableName = MEMBER_SERVICE
+                ; mappingList = list:{}
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。
+
+小文字に変更されないかテストをする
+そういえば、シングルクォーテーションとかあっても大丈夫だよね？→ &#x27\;
+というか絵文字は？💖
+                        ; databaseComment = 会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp\;one-to-one&nbsp\;を表現している。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; jflute
+                        }
+                        ; pieceCode = 767ffa1f
+                        ; pieceOwner = jflute
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-30T13:57:43.891
+                        ; previousPieceList = list:{
+                            ; ab95e92
+                        }
+                    }
+                }
+                ; columnList = list:{
+                    ; map:{
+                        ; columnName = MEMBER_SERVICE_ID
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 独立した主キーとなるが、実質的に会員IDとは one-to-one である。
+                                ; databaseComment = 独立した主キーとなるが、実質的に会員IDとは&nbsp\;one-to-one&nbsp\;である。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                                ; pieceCode = 25a8d9e5
+                                ; pieceOwner = tominaga
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-29T17:54:35.653
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = SERVICE_POINT_COUNT
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 明らかにおかしいカラム名
+                                ; databaseComment = 購入したら増えて使ったら減る。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = 4bc473be
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-30T13:51:58.786
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
+                }
+            }
+            ; map:{
+                ; tableName = MEMBER_STATUS
+                ; mappingList = list:{}
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
+
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
+                        ; databaseComment = 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
+
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                        }
+                        ; pieceCode = 1d1af0e7
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-29T18:48:35.348
+                        ; previousPieceList = list:{}
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
+                ; tableName = MEMBER_SECURITY
+                ; mappingList = list:{}
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。
+                        ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;で、会員一人につき必ず一つのセキュリティ情報がある
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; ryohei
+                        }
+                        ; pieceCode = 339d5b82
+                        ; pieceOwner = ryohei
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-29T17:33:39.977
+                        ; previousPieceList = list:{
+                            ; 36b237b9
+                        }
+                    }
+                }
+                ; columnList = list:{}
             }
             ; map:{
                 ; tableName = PRODUCT
@@ -365,29 +388,6 @@ http://dbflute.seasar.org/ja/tutorial/handson/section03.html
                 }
             }
             ; map:{
-                ; tableName = MEMBER_SECURITY
-                ; mappingList = list:{}
-                ; propertyList = list:{
-                    ; map:{
-                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある。
-                        ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;で、会員一人につき必ず一つのセキュリティ情報がある
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; tominaga
-                            ; ryohei
-                        }
-                        ; pieceCode = 339d5b82
-                        ; pieceOwner = ryohei
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-29T17:33:39.977
-                        ; previousPieceList = list:{
-                            ; 36b237b9
-                        }
-                    }
-                }
-                ; columnList = list:{}
-            }
-            ; map:{
                 ; tableName = PRODUCT_CATEGORY
                 ; mappingList = list:{}
                 ; propertyList = list:{
@@ -434,25 +434,6 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                         }
                     }
                     ; map:{
-                        ; columnName = PRODUCT_CATEGORY_CODE
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 編集1
-                                ; databaseComment = 自分のテーブルの別のレコードからも参照される。
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; yuto
-                                }
-                                ; pieceCode = a70dd873
-                                ; pieceOwner = yuto
-                                ; pieceGitBranch = master
-                                ; pieceDatetime = 2018-05-01T17:27:42.446
-                                ; previousPieceList = list:{}
-                            }
-                        }
-                    }
-                    ; map:{
                         ; columnName = PARENT_CATEGORY_CODE
                         ; mappingList = list:{}
                         ; propertyList = list:{
@@ -467,6 +448,25 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                                 ; pieceOwner = yuto
                                 ; pieceGitBranch = master
                                 ; pieceDatetime = 2018-05-01T17:27:54.049
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = PRODUCT_CATEGORY_CODE
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 編集1
+                                ; databaseComment = 自分のテーブルの別のレコードからも参照される。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = a70dd873
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-05-01T17:27:42.446
                                 ; previousPieceList = list:{}
                             }
                         }
@@ -507,40 +507,18 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                 ; columnList = list:{}
             }
             ; map:{
-                ; tableName = MEMBER_LOGIN
-                ; mappingList = list:{}
-                ; propertyList = list:{
-                    ; map:{
-                        ; decomment = コンフリクト解消
-                        ; databaseComment = ログインするたびに登録されるログイン履歴。
-登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; jflute
-                            ; yuto
-                        }
-                        ; pieceCode = a09fcdc1
-                        ; pieceOwner = yuto
-                        ; pieceGitBranch = master
-                        ; pieceDatetime = 2018-05-01T17:24:28.287
-                        ; previousPieceList = list:{
-                            ; 260b4936
-                        }
-                    }
-                }
-                ; columnList = list:{}
-            }
-            ; map:{
                 ; tableName = MEMBER_ADDRESS
                 ; mappingList = list:{}
                 ; propertyList = list:{
                     ; map:{
                         ; decomment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
 会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
-有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot\;1 : 0..1&quot\; である。
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &amp\;quot\;1 : 0..1&amp\;quot\; である。
 かぼすはかぼさない。いやかぼす♪。💕
 
 いけるんですね〜 by かぼす
+
+かぼマッピングのテストの環境ができあがってからのデコメントだよー。
                         ; databaseComment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
 会員を基点に考えた場合、構造的には&nbsp\;one-to-many&nbsp\;だが、業務的な定型条件で&nbsp\;one-to-one&nbsp\;になる。このような構造を「業務的one-to-one」と呼ぶ！
 有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp\;"1&nbsp\;:&nbsp\;0..1"&nbsp\;である。
@@ -549,12 +527,12 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                             ; jflute
                             ; yuto
                         }
-                        ; pieceCode = e7633359
-                        ; pieceOwner = yuto
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-30T20:53:51.622
+                        ; pieceCode = 6b05a6d1
+                        ; pieceOwner = jflute
+                        ; pieceGitBranch = master
+                        ; pieceDatetime = 2018-05-02T20:36:38.721
                         ; previousPieceList = list:{
-                            ; 630b8ac4
+                            ; e7633359
                         }
                     }
                 }
@@ -661,46 +639,62 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
                     ; map:{
                         ; columnName = MEMBER_ADDRESS_ID
                         ; mappingList = list:{}
+                        ; propertyList = list:{}
+                    }
+                }
+            }
+            ; map:{
+                ; tableName = MEMBER_LOGIN
+                ; mappingList = list:{}
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = コンフリクト解消
+                        ; databaseComment = ログインするたびに登録されるログイン履歴。
+登録されたら更新されるも削除されることもない。DBコメントを修正します。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; jflute
+                            ; yuto
+                        }
+                        ; pieceCode = a09fcdc1
+                        ; pieceOwner = yuto
+                        ; pieceGitBranch = master
+                        ; pieceDatetime = 2018-05-01T17:24:28.287
+                        ; previousPieceList = list:{
+                            ; 260b4936
+                        }
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
+                ; tableName = REGION
+                ; mappingList = list:{}
+                ; propertyList = list:{}
+                ; columnList = list:{
+                    ; map:{
+                        ; columnName = REGION_ID
+                        ; mappingList = list:{}
                         ; propertyList = list:{
                             ; map:{
-                                ; decomment = 修正5
+                                ; decomment = 修正6
                                 ; databaseComment = 会員住所を識別するID。
 期間ごとに同じ会員のデータを保持することがあるため、これは単なるPKであってFKではない。
                                 ; commentVersion = 0
                                 ; authorList = list:{
                                     ; yuto
                                 }
-                                ; pieceCode = 5dca9f77
+                                ; pieceCode = 6800109b
                                 ; pieceOwner = yuto
                                 ; pieceGitBranch = master
-                                ; pieceDatetime = 2018-05-01T17:33:37.511
+                                ; pieceDatetime = 2018-05-01T17:34:16.650
                                 ; previousPieceList = list:{
-                                    ; 8e7ccdf9
+                                    ; 5dca9f77
                                 }
                             }
                         }
                     }
                 }
-            }
-            ; map:{
-                ; tableName = MEMBER_FOLLOWING
-                ; mappingList = list:{}
-                ; propertyList = list:{
-                    ; map:{
-                        ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。
-                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; jflute
-                        }
-                        ; pieceCode = 1cde89d9
-                        ; pieceOwner = jflute
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-29T16:57:34.667
-                        ; previousPieceList = list:{}
-                    }
-                }
-                ; columnList = list:{}
             }
             ; map:{
                 ; tableName = MEMBER
@@ -717,6 +711,9 @@ http://localhost:8926/api/document/maihamadb/schemahtml/#member_service
 author が被らないことの
 
 最終確認
+
+ほげほげ
+ver002
                         ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
@@ -727,12 +724,43 @@ author が被らないことの
                             ; jflute
                             ; ryohei
                         }
-                        ; pieceCode = 7ed3845e
-                        ; pieceOwner = yuto
-                        ; pieceGitBranch = null
-                        ; pieceDatetime = 2017-12-30T21:35:40.879
+                        ; pieceCode = e9ca230f
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = master
+                        ; pieceDatetime = 2018-05-04T13:38:57.312
                         ; previousPieceList = list:{
-                            ; 99ae0ed9
+                            ; 4d94b80c
+                        }
+                    }
+                    ; map:{
+                        ; decomment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+
+あれ？ author に複数人入っている piece が存在する気が...
+
+おかしい...
+
+author が被らないことの
+
+最終確認
+
+ver001
+                        ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; yuto
+                            ; tominaga
+                            ; jflute
+                            ; ryohei
+                        }
+                        ; pieceCode = 1aaae42f
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = master
+                        ; pieceDatetime = 2018-05-04T13:38:51.549
+                        ; previousPieceList = list:{
+                            ; 4d94b80c
                         }
                     }
                 }
@@ -757,28 +785,6 @@ author が被らないことの
                                 ; pieceDatetime = 2017-12-24T23:17:41.230
                                 ; previousPieceList = list:{
                                     ; 28e001f
-                                }
-                            }
-                        }
-                    }
-                    ; map:{
-                        ; columnName = MEMBER_ACCOUNT
-                        ; mappingList = list:{}
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 不穏なことをいってるんじゃぁないよ！！
-                                ; databaseComment = ログインIDとして利用する。
-昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; yuto
-                                }
-                                ; pieceCode = 8e28669c
-                                ; pieceOwner = yuto
-                                ; pieceGitBranch = master
-                                ; pieceDatetime = 2018-05-01T17:31:09.232
-                                ; previousPieceList = list:{
-                                    ; a273b0e8
                                 }
                             }
                         }
@@ -810,22 +816,24 @@ decomment \;
                         }
                     }
                     ; map:{
-                        ; columnName = BIRTHDATE
+                        ; columnName = MEMBER_ACCOUNT
                         ; mappingList = list:{}
                         ; propertyList = list:{
                             ; map:{
-                                ; decomment = 必須項目ではないので、このデータがない会員もいる。
-生年月日スーパーマン！私は生まれたら空を飛ぶ、とりゃー！
-                                ; databaseComment = 必須項目ではないので、このデータがない会員もいる。
+                                ; decomment = 不穏なことをいってるんじゃぁないよ！！
+                                ; databaseComment = ログインIDとして利用する。
+昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
                                 ; commentVersion = 0
                                 ; authorList = list:{
-                                    ; jflute
+                                    ; yuto
                                 }
-                                ; pieceCode = 1e333dc5
-                                ; pieceOwner = jflute
-                                ; pieceGitBranch = null
-                                ; pieceDatetime = 2017-12-24T23:18:33.111
-                                ; previousPieceList = list:{}
+                                ; pieceCode = 8e28669c
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-05-01T17:31:09.232
+                                ; previousPieceList = list:{
+                                    ; a273b0e8
+                                }
                             }
                         }
                     }
@@ -852,7 +860,47 @@ decomment \;
                             }
                         }
                     }
+                    ; map:{
+                        ; columnName = BIRTHDATE
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 必須項目ではないので、このデータがない会員もいる。
+生年月日スーパーマン！私は生まれたら空を飛ぶ、とりゃー！
+                                ; databaseComment = 必須項目ではないので、このデータがない会員もいる。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; jflute
+                                }
+                                ; pieceCode = 1e333dc5
+                                ; pieceOwner = jflute
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-24T23:18:33.111
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
                 }
+            }
+            ; map:{
+                ; tableName = MEMBER_FOLLOWING
+                ; mappingList = list:{}
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴(まじで!?)が閲覧できる。
+                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; jflute
+                        }
+                        ; pieceCode = 1cde89d9
+                        ; pieceOwner = jflute
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-29T16:57:34.667
+                        ; previousPieceList = list:{}
+                    }
+                }
+                ; columnList = list:{}
             }
         }
     }
